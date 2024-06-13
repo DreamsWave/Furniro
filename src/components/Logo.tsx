@@ -7,10 +7,9 @@ const Logo = () => {
       <img
         src={LogoImage}
         alt="Furniro logo image"
-        width="50"
-        className="object-contain"
+        className="object-contain w-[30px] lg:w-[50px]"
       />
-      <h1 className="font-montserrat text-text-color text-[32px] font-bold">
+      <h1 className="font-montserrat text-text-color font-bold text-2xl lg:text-[32px]">
         Furniro
       </h1>
     </Link>

@@ -4,7 +4,6 @@ import { Provider as StoreProvider } from "react-redux";
 import { RouterProvider } from "react-router-dom";
 import { store } from "./store";
 import { router } from "./router";
-import "@fontsource/poppins";
 import "@fontsource-variable/montserrat";
 import "./index.css";
 
