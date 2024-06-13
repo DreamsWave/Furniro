@@ -10,8 +10,10 @@ const Layout = ({ children, showFeature = false }: LayoutProps) => {
   return (
     <div>
       <Header />
-      {children}
-      {showFeature && <Feature />}
+      <main>
+        {children}
+        {showFeature && <Feature />}
+      </main>
       <Footer />
     </div>
   );

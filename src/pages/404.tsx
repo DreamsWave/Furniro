@@ -1,11 +1,11 @@
 import Layout from "../components/Layout";
 
-const HomePage = () => {
+const NotFoundPage = () => {
   return (
     <Layout>
-      <div>Hero</div>
+      <h1>Page not found</h1>
     </Layout>
   );
 };
 
-export default HomePage;
+export default NotFoundPage;
