@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 
 const AboutPage = () => {
-  return <Layout>About page</Layout>;
+  return <Layout pageTitle="About">About page</Layout>;
 };
 
 export default AboutPage;
