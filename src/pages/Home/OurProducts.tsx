@@ -56,7 +56,7 @@ const OurProducts = () => {
   }, [windowWidth, getDisplayedProducts]);
 
   return (
-    <section className="mt-14">
+    <section className="mt-14 pb-10">
       <div className="container mx-auto px-2 flex flex-col items-center lg:px-6">
         <h2 className="font-poppinsBold text-4xl font-bold text-text-color-100 mb-8">
           Our Products
