@@ -76,7 +76,7 @@ const products = [
     price: "14000000",
     discountPercent: "50",
     image: image7,
-    isNew: false,
+    isNew: true,
   },
   {
     id: "7",
@@ -87,6 +87,16 @@ const products = [
     discountPercent: "",
     image: image8,
     isNew: true,
+  },
+  {
+    id: "8",
+    title: "Grifo",
+    description: "Night lamp",
+    currency: "Rp",
+    price: "1500000",
+    discountPercent: "",
+    image: image5,
+    isNew: false,
   },
 ];
 
