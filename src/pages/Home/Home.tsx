@@ -1,4 +1,4 @@
-import Layout from "../../components/Layout";
+import Layout from "@/components/Layout";
 import Hero from "./Hero";
 import BrowseTheRange from "./BrowseTheRange";
 import OurProducts from "./OurProducts";

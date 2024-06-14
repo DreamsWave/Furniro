@@ -1,6 +1,6 @@
-import BrowseTheRangeDiningImage from "../../assets/images/home/the-range-dining.jpg";
-import BrowseTheRangeLivingImage from "../../assets/images/home/the-range-living.jpg";
-import BrowseTheRangeBedroomImage from "../../assets/images/home/the-range-bedroom.jpg";
+import BrowseTheRangeDiningImage from "@/assets/images/home/the-range-dining.jpg";
+import BrowseTheRangeLivingImage from "@/assets/images/home/the-range-living.jpg";
+import BrowseTheRangeBedroomImage from "@/assets/images/home/the-range-bedroom.jpg";
 import { Link } from "react-router-dom";
 
 const BrowseTheRange = () => {

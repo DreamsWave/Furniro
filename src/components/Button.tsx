@@ -1,4 +1,4 @@
-import { cn } from "../utils";
+import { cn } from "@/utils";
 import { Link } from "react-router-dom";
 
 interface ButtonProps {
@@ -7,6 +7,7 @@ interface ButtonProps {
   linkTo?: string;
   secondary?: boolean;
   className?: string;
+  wide?: boolean;
 }
 
 const Button = ({
@@ -14,12 +15,14 @@ const Button = ({
   outlined = false,
   linkTo = "",
   secondary = false,
+  wide = false,
   className = "",
 }: ButtonProps) => {
   const buttonClassName = cn(
     "bg-primary border-2 border-primary text-white uppercase px-14 py-4 inline-flex transition-all hover:bg-white hover:text-primary whitespace-nowrap",
     outlined && "bg-white text-primary hover:bg-primary hover:text-white",
     secondary && "border-white py-3 px-14 hover:border-primary",
+    wide && "py-3 px-20",
     className
   );
 

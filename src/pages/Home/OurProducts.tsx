@@ -1,12 +1,15 @@
 import { useEffect, useState, useCallback } from "react";
 import resolveConfig from "tailwindcss/resolveConfig";
-import Button from "../../components/Button";
+import Button from "@/components/Button";
 import Product from "./Product";
 import products from "./products";
 import tailwindConfig from "../../../tailwind.config";
 
 const OurProducts = () => {
-  const { theme } = resolveConfig(tailwindConfig);
+  const { theme } = resolveConfig({
+    content: tailwindConfig.content,
+    theme: tailwindConfig.theme,
+  });
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [displayedProducts, setDisplayedProducts] = useState(products);
 
@@ -65,7 +68,7 @@ const OurProducts = () => {
             </li>
           ))}
         </ul>
-        <Button outlined linkTo="/products">
+        <Button outlined wide linkTo="/products">
           Show More
         </Button>
       </div>

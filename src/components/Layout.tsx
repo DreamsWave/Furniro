@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
-import Feature from "./Feature";
-import Footer from "./Footer";
-import Header from "./Header";
+import Feature from "@/components/Feature";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 interface LayoutProps {
   children: React.ReactNode;

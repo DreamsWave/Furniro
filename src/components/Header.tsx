@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { User, Search, Heart, ShoppingCart, Menu } from "lucide-react";
-import Logo from "./Logo";
+import Logo from "@/components/Logo";
 
 const Header = () => {
   return (

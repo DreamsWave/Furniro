@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Share2, ArrowRightLeft, Heart } from "lucide-react";
-import Button from "../../components/Button";
+import Button from "@/components/Button";
 
 interface ProductProps {
   linkTo: string;
