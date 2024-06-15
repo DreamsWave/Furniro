@@ -58,13 +58,12 @@ const Inspirations = () => {
   }
 
   function getInspiration(id: number) {
-    console.log(id);
     return inspirations.find((insp) => insp.id === id);
   }
 
   return (
-    <div className="py-11 items-center bg-primary-light flex flex-col overflow-hidden">
-      <div className="container mx-auto px-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:px-6">
+    <section className="py-11 items-center bg-primary-light flex flex-col overflow-hidden">
+      <div className="container mx-auto px-6 grid grid-cols-1 gap-0 md:grid-cols-2 lg:gap-10 lg:grid-cols-3">
         <div className="mb-4 flex flex-col justify-center md:col-span-1">
           <h3 className="font-poppinsBold text-4xl text-text-color-100 mb-2">
             50+ Beautiful rooms inspiration
@@ -89,8 +88,8 @@ const Inspirations = () => {
         >
           <CarouselContent className="max-h-[400px]">
             {inspirations.map((inspiration, index) => (
-              <CarouselItem key={index} className="basis-2/3 lg:basis-2/5">
-                <div className="px-3 h-[580px]">
+              <CarouselItem key={index} className="basis-2/3 lg:basis-2/5 mx-3">
+                <div className="h-[580px]">
                   <img
                     src={inspiration.image}
                     alt={inspiration.title}
@@ -101,7 +100,7 @@ const Inspirations = () => {
             ))}
           </CarouselContent>
           <CarouselNext />
-          <CarouselDots />
+          <CarouselDots className="md:w-auto md:left-1/2 md:-translate-x-1/2 lg:w-auto lg:left-1/2 lg:-translate-x-1/2" />
           <div
             className={cn(
               "absolute left-4 bottom-4 bg-white/80 md:left-6 md:bottom-6"
@@ -115,15 +114,15 @@ const Inspirations = () => {
               <p className="font-poppinsSemibold text-xl md:text-[28px]">
                 {currentInspiration?.description}
               </p>
-              <Button className="absolute left-full bottom-0 size-12 p-0 flex items-center justify-center">
-                <ArrowRight className="size-6 stroke-white" />
+              <Button className="absolute left-full bottom-0 size-12 p-0 flex items-center justify-center group">
+                <ArrowRight className="size-6 stroke-white group-hover:stroke-primary" />
               </Button>
             </div>
           </div>
         </Carousel>
       </div>
       <Button className="flex w-fit md:hidden">Explore More</Button>
-    </div>
+    </section>
   );
 };
 

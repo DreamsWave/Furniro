@@ -202,7 +202,8 @@ CarouselItem.displayName = "CarouselItem";
 const CarouselDots = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+>(({ className, ...props }, _ref) => {
   const { selectedIndex, scrollTo, api } = useCarousel();
   return (
     <div

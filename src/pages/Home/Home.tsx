@@ -3,6 +3,7 @@ import Hero from "./Hero";
 import BrowseTheRange from "./BrowseTheRange";
 import OurProducts from "./OurProducts";
 import Inspirations from "./Inspirations";
+import ShareSetup from "./ShareSetup";
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
       <BrowseTheRange />
       <OurProducts />
       <Inspirations />
+      <ShareSetup />
     </Layout>
   );
 };
