@@ -2,7 +2,16 @@ import { Link } from "react-router-dom";
 import { Share2, ArrowRightLeft, Heart, Image } from "lucide-react";
 import Button from "@/components/Button";
 import { Product } from "@/types";
+import { useState } from "react";
+import { cn } from "@/utils";
 
+export const PlaceholderImage = () => {
+  return (
+    <div className="w-full aspect-[2.8/3] flex items-center justify-center bg-[#E1E2E5]">
+      <Image color="#ffffff" size={64} />
+    </div>
+  );
+};
 interface ProductGridElementProps {
   linkTo: string;
   product: Product;
@@ -19,18 +28,23 @@ const ProductGridElement = ({
     isNew = false,
   },
 }: ProductGridElementProps) => {
+  const [showPlaceholderImage, setShowPlaceholderImage] = useState(false);
   return (
     <Link
       to={linkTo}
       className="h-full bg-[#F4F5F7] relative flex flex-col group overflow-hidden"
     >
-      {image ? (
-        <img src={image} className="w-full aspect-[2.8/3] object-cover" />
-      ) : (
-        <div className="w-full aspect-[2.8/3] flex items-center justify-center bg-[#E1E2E5]">
-          <Image color="#ffffff" size={64} />
-        </div>
+      {image && (
+        <img
+          src={image}
+          className={cn(
+            "w-full aspect-[2.8/3] object-cover",
+            showPlaceholderImage && "hidden"
+          )}
+          onError={() => setShowPlaceholderImage(true)}
+        />
       )}
+      {showPlaceholderImage && <PlaceholderImage />}
       <div className="py-4 px-4 flex flex-col flex-grow">
         <h4 className="font-poppinsSemibold text-base text-text-color-100 md:text-xl">
           {title}

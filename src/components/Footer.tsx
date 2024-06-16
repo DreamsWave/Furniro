@@ -6,7 +6,6 @@ const Footer = () => {
 
   function handleNewsletterSubmit(e: FormEvent) {
     e.preventDefault();
-    console.log("send email " + newsletterEmail);
   }
 
   return (

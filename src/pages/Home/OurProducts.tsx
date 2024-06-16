@@ -1,9 +1,9 @@
 import Button from "@/components/Button";
 import ProductsGrid from "@/components/ProductsGrid";
-import products from "@/products";
 import { useEffect, useState, useCallback } from "react";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../../tailwind.config";
+import useProducts from "@/hooks/useProducts";
 
 const OurProducts = () => {
   const { theme } = resolveConfig({
@@ -12,6 +12,7 @@ const OurProducts = () => {
   });
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [showCount, setShowCount] = useState(4);
+  const products = useProducts({ count: 8 });
 
   // Tailwind CSS default breakpoints
   const breakpoints = {
@@ -62,7 +63,7 @@ const OurProducts = () => {
           Our Products
         </h2>
         <ProductsGrid products={products} showCount={showCount} />
-        <Button outlined wide linkTo="/products">
+        <Button outlined wide linkTo="/shop">
           Show More
         </Button>
       </div>
