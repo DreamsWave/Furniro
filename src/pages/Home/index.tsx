@@ -5,7 +5,7 @@ import OurProducts from "./OurProducts";
 import Inspirations from "./Inspirations";
 import ShareSetup from "./ShareSetup";
 
-const HomePage = () => {
+const Home = () => {
   return (
     <Layout pageTitle="Home">
       <Hero />
@@ -17,4 +17,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Home;

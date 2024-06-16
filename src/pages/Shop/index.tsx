@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 
-const ShopPage = () => {
+const Shop = () => {
   return (
     <Layout showFeature={true} pageTitle="Shop">
       shop page
@@ -8,4 +8,4 @@ const ShopPage = () => {
   );
 };
 
-export default ShopPage;
+export default Shop;

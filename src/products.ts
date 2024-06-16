@@ -1,3 +1,4 @@
+import { Product } from "./types";
 import image1 from "@/assets/images/home/our-products-1.jpg";
 import image2 from "@/assets/images/home/our-products-2.jpg";
 import image3 from "@/assets/images/home/our-products-3.jpg";
@@ -7,14 +8,14 @@ import image6 from "@/assets/images/home/our-products-6.jpg";
 import image7 from "@/assets/images/home/our-products-7.jpg";
 import image8 from "@/assets/images/home/our-products-8.jpg";
 
-const products = [
+const products: Product[] = [
   {
     id: "0",
     title: "Syltherine",
     description: "Stylish cafe chair",
     currency: "Rp",
-    price: "3500000",
-    discountPercent: "30",
+    price: 3500000,
+    discountPercent: 30,
     image: image1,
     isNew: false,
   },
@@ -23,8 +24,8 @@ const products = [
     title: "Leviosa",
     description: "Stylish cafe chair",
     currency: "Rp",
-    price: "2500000",
-    discountPercent: "",
+    price: 2500000,
+    discountPercent: null,
     image: image2,
     isNew: false,
   },
@@ -33,8 +34,8 @@ const products = [
     title: "Lolito",
     description: "Luxury big sofa",
     currency: "Rp",
-    price: "14000000",
-    discountPercent: "50",
+    price: 14000000,
+    discountPercent: 50,
     image: image3,
     isNew: false,
   },
@@ -43,9 +44,9 @@ const products = [
     title: "Respira",
     description: "Outdoor bar table and stool",
     currency: "Rp",
-    price: "500000",
-    discountPercent: "",
-    image: image4,
+    price: 500000,
+    discountPercent: null,
+    image: image3,
     isNew: true,
   },
   {
@@ -53,9 +54,9 @@ const products = [
     title: "Grifo",
     description: "Night lamp",
     currency: "Rp",
-    price: "1500000",
-    discountPercent: "",
-    image: image5,
+    price: 1500000,
+    discountPercent: null,
+    image: image4,
     isNew: false,
   },
   {
@@ -63,9 +64,9 @@ const products = [
     title: "Muggo",
     description: "Small mug",
     currency: "Rp",
-    price: "150000",
-    discountPercent: "",
-    image: image6,
+    price: 150000,
+    discountPercent: null,
+    image: image5,
     isNew: true,
   },
   {
@@ -73,9 +74,9 @@ const products = [
     title: "Pingky",
     description: "Cute bed set",
     currency: "Rp",
-    price: "14000000",
-    discountPercent: "50",
-    image: image7,
+    price: 14000000,
+    discountPercent: 50,
+    image: image6,
     isNew: true,
   },
   {
@@ -83,9 +84,9 @@ const products = [
     title: "Potty",
     description: "Minimalist flower pot",
     currency: "Rp",
-    price: "500000",
-    discountPercent: "",
-    image: image8,
+    price: 500000,
+    discountPercent: null,
+    image: image7,
     isNew: true,
   },
   {
@@ -93,9 +94,9 @@ const products = [
     title: "Grifo",
     description: "Night lamp",
     currency: "Rp",
-    price: "1500000",
-    discountPercent: "",
-    image: image5,
+    price: 1500000,
+    discountPercent: null,
+    image: image8,
     isNew: false,
   },
 ];

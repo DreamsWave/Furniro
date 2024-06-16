@@ -1,8 +1,8 @@
+import Button from "@/components/Button";
+import ProductsGrid from "@/components/ProductsGrid";
+import products from "@/products";
 import { useEffect, useState, useCallback } from "react";
 import resolveConfig from "tailwindcss/resolveConfig";
-import Button from "@/components/Button";
-import Product from "./Product";
-import products from "./products";
 import tailwindConfig from "../../../tailwind.config";
 
 const OurProducts = () => {
@@ -11,7 +11,7 @@ const OurProducts = () => {
     theme: tailwindConfig.theme,
   });
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [displayedProducts, setDisplayedProducts] = useState(products);
+  const [showCount, setShowCount] = useState(4);
 
   // Tailwind CSS default breakpoints
   const breakpoints = {
@@ -28,18 +28,18 @@ const OurProducts = () => {
   }, []);
 
   // Determine the number of products to display based on the window width
-  const getDisplayedProducts = useCallback(() => {
+  const getShowCount = useCallback(() => {
     const defaultDisplay = 4;
     const mediumDisplay = 6;
     const largeDisplay = 8;
 
     if (windowWidth >= parseInt(breakpoints.lg)) {
-      return products.slice(0, largeDisplay);
+      return largeDisplay;
     } else if (windowWidth >= parseInt(breakpoints.md)) {
-      return products.slice(0, mediumDisplay);
+      return mediumDisplay;
     }
-    return products.slice(0, defaultDisplay);
-  }, [windowWidth, breakpoints.lg, breakpoints.md]); // Add dependencies here
+    return defaultDisplay;
+  }, [windowWidth, breakpoints.lg, breakpoints.md]);
 
   // useEffect to add and remove the resize event listener
   useEffect(() => {
@@ -52,8 +52,8 @@ const OurProducts = () => {
   }, [handleResize]);
 
   useEffect(() => {
-    setDisplayedProducts(getDisplayedProducts());
-  }, [windowWidth, getDisplayedProducts]);
+    setShowCount(getShowCount());
+  }, [windowWidth, getShowCount]);
 
   return (
     <section className="mt-14 pb-14">
@@ -61,13 +61,7 @@ const OurProducts = () => {
         <h2 className="font-poppinsBold text-4xl font-bold text-text-color-100 mb-8">
           Our Products
         </h2>
-        <ul className="grid grid-cols-2 gap-2 mb-8 md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-8">
-          {displayedProducts.map((product) => (
-            <li key={product.id}>
-              <Product {...product} linkTo={`/product-${product.id}`} />
-            </li>
-          ))}
-        </ul>
+        <ProductsGrid products={products} showCount={showCount} />
         <Button outlined wide linkTo="/products">
           Show More
         </Button>
