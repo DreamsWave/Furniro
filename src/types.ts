@@ -8,3 +8,5 @@ export interface Product {
   image: string;
   isNew: boolean;
 }
+
+export type ProductsSortByTypes = "default" | "price" | "name";

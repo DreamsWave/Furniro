@@ -1,4 +1,5 @@
-import { Product } from "./types";
+import { Product, ProductsSortByTypes } from "@/types";
+import { getImageUrl } from "@/utils";
 
 export const products: Product[] = [
   {
@@ -210,36 +211,6 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-9.webp",
     isNew: false,
-  },
-  {
-    id: "21",
-    title: "Cozy",
-    description: "Comfortable reading chair",
-    currency: "Rp",
-    price: 2900000,
-    discountPercent: null,
-    image: "image-10.jpeg",
-    isNew: true,
-  },
-  {
-    id: "22",
-    title: "Writty",
-    description: "Vintage writing desk",
-    currency: "Rp",
-    price: 4800000,
-    discountPercent: null,
-    image: "image-11.jpeg",
-    isNew: false,
-  },
-  {
-    id: "23",
-    title: "Comfy",
-    description: "Soft cotton bed sheets",
-    currency: "Rp",
-    price: 700000,
-    discountPercent: null,
-    image: "image-12.jpeg",
-    isNew: true,
   },
   {
     id: "21",
@@ -531,25 +502,45 @@ export const products: Product[] = [
     image: "image-10.jpeg",
     isNew: true,
   },
-  {
-    id: "50",
-    title: "Mirrory",
-    description: "Ornate mirror",
-    currency: "Rp",
-    price: 1500000,
-    discountPercent: null,
-    image: "image-11.jpeg",
-    isNew: false,
-  },
 ];
+
+export const updateProductsImagePaths = (products: Product[]) => {
+  const updatedProducts = products.map((product) => {
+    return {
+      ...product,
+      image: getImageUrl(product.image, "furniture"),
+    };
+  });
+  return updatedProducts;
+};
 
 export const getProducts = async ({
   count,
   from,
+  sortBy,
 }: {
-  count: number;
+  count?: number;
   from?: number;
+  sortBy?: ProductsSortByTypes;
 }) => {
-  const finalProducts = products.slice(from || 0, from ? from + count : count);
+  const sortedProducts = [...products];
+
+  switch (sortBy) {
+    case "price":
+      sortedProducts.sort((a, b) => a.price - b.price);
+      break;
+    case "name":
+      sortedProducts.sort((a, b) => a.title.localeCompare(b.title));
+      break;
+    default:
+      break;
+  }
+
+  const pickedProducts = count
+    ? sortedProducts.slice(from || 0, from ? from + count : count)
+    : sortedProducts;
+
+  const finalProducts = updateProductsImagePaths(pickedProducts);
+
   return finalProducts;
 };
