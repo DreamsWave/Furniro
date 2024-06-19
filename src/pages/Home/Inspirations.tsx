@@ -62,13 +62,13 @@ const Inspirations = () => {
   }
 
   return (
-    <section className="py-11 items-center bg-primary-light flex flex-col overflow-hidden">
-      <div className="container mx-auto px-6 grid grid-cols-1 gap-0 md:grid-cols-2 lg:gap-10 lg:grid-cols-3">
+    <section className="flex flex-col items-center overflow-hidden bg-primary-light py-11">
+      <div className="container mx-auto grid grid-cols-1 gap-0 px-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
         <div className="mb-4 flex flex-col justify-center md:col-span-1">
-          <h3 className="font-poppinsBold text-4xl text-text-color-100 mb-2">
+          <h3 className="mb-2 font-poppinsBold text-4xl text-text-color-100">
             50+ Beautiful rooms inspiration
           </h3>
-          <p className="font-poppinsMedium text-base text-text-color-200 mb-6">
+          <p className="mb-6 font-poppinsMedium text-base text-text-color-200">
             Our designer already made a lot of beautiful prototype of rooms that
             inspire you
           </p>
@@ -84,37 +84,44 @@ const Inspirations = () => {
             align: "start",
             loop: true,
           }}
-          className=" w-full mb-16 md:col-start-2 md:col-end-4"
+          className="mb-16 w-full md:col-start-2 md:col-end-4"
         >
           <CarouselContent className="max-h-[400px]">
             {inspirations.map((inspiration, index) => (
-              <CarouselItem key={index} className="basis-2/3 lg:basis-2/5 mx-3">
+              <CarouselItem key={index} className="mx-3 basis-2/3 lg:basis-2/5">
                 <div className="h-[580px]">
                   <img
                     src={inspiration.image}
                     alt={inspiration.title}
-                    className="object-cover h-full w-full"
+                    className="h-full w-full object-cover"
                   />
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
           <CarouselNext />
-          <CarouselDots className="md:w-auto md:left-1/2 md:-translate-x-1/2 lg:w-auto lg:left-1/2 lg:-translate-x-1/2" />
+          <CarouselDots className="md:left-1/2 md:w-auto md:-translate-x-1/2 lg:left-1/2 lg:w-auto lg:-translate-x-1/2" />
           <div
             className={cn(
-              "absolute left-4 bottom-4 bg-white/80 md:left-6 md:bottom-6"
+              "absolute bottom-4 left-4 bg-white/80 md:bottom-6 md:left-6",
             )}
           >
             <div className="relative p-4 md:p-8 md:pb-6">
-              <h4 className="mb-2 font-poppinsMedium text-sm md:text-base text-text-color-200">
+              <h4 className="mb-2 font-poppinsMedium text-sm text-text-color-200 md:text-base">
                 0{currentInspiration ? currentInspiration.id + 1 : ""} —{" "}
                 {currentInspiration?.title}
               </h4>
               <p className="font-poppinsSemibold text-xl md:text-[28px]">
                 {currentInspiration?.description}
               </p>
-              <Button className="absolute left-full bottom-0 size-12 p-0 flex items-center justify-center group">
+              <Button
+                className="group absolute bottom-0 left-full flex size-12 items-center justify-center p-0"
+                linkTo={
+                  currentInspiration?.id
+                    ? `product/${currentInspiration.id}`
+                    : "#"
+                }
+              >
                 <ArrowRight className="size-6 stroke-white group-hover:stroke-primary" />
               </Button>
             </div>

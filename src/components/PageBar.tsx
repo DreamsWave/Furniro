@@ -1,9 +1,17 @@
+import { cn } from "@/utils";
+
 interface PageBarProps {
   children?: React.ReactNode;
+  className?: string;
 }
-const PageBar = ({ children }: PageBarProps) => {
+const PageBar = ({ children, className = "" }: PageBarProps) => {
   return (
-    <div className="relative min-h-[100px] bg-primary-light py-8 font-poppins text-base">
+    <div
+      className={cn(
+        className,
+        "relative min-h-[100px] bg-primary-light py-8 font-poppins text-base",
+      )}
+    >
       <div className="container mx-auto px-2 lg:px-8">{children}</div>
     </div>
   );

@@ -544,3 +544,18 @@ export const getProducts = async ({
 
   return finalProducts;
 };
+
+export const getProduct = async (id: string) => {
+  const product = products.find((product) => product.id === id);
+
+  if (!product) {
+    throw new Error("Product not found");
+  }
+
+  const updatedProduct = {
+    ...product,
+    image: getImageUrl(product.image, "furniture"),
+  };
+
+  return updatedProduct;
+};
