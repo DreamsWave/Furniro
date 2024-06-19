@@ -75,7 +75,7 @@ const Shop = () => {
   }
 
   return (
-    <Layout showFeature={true} pageTitle="Shop">
+    <Layout showBenefits={true} pageTitle="Shop">
       <Hero heroName="Shop" />
       <PageBar>
         <div className="flex justify-between">
@@ -132,7 +132,7 @@ const Shop = () => {
       <div className="container mx-auto px-2 py-8 lg:px-8">
         <ProductsGrid products={products} />
       </div>
-      <Pagination className="select-none">
+      <Pagination className="mb-20 select-none">
         <PaginationContent className="gap-9">
           <PaginationItem
             className={cn(
