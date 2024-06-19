@@ -40,10 +40,13 @@ const ProductPage = () => {
       <PageBar className="flex items-center">
         <Breadcrumbs title={product?.title ? product.title : "..."} />
       </PageBar>
-      <div className="grid-col-1 md:grid-col-2 grid">
-        <Header product={product} />
-        <Gallery />
-        <Actions />
+      <div className="grid-col-1 md:grid-col-2 container grid gap-5 md:grid-cols-[repeat(2,_1fr)]">
+        <Header product={product} className="md:col-span-2 md:col-start-2" />
+        <Gallery
+          product={product}
+          className="md:col-span-1 md:row-span-2 md:row-start-1"
+        />
+        <Actions product={product} className="md:col-span-2 md:col-start-2" />
       </div>
       <Information />
       <RelatedProducts products={relatedProducts} />
