@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getImageUrl(fullname: string, innerPath?: string): string {
-  let imagePath = "images";
+  let imagePath = "/images";
   if (innerPath) {
     imagePath += `/${innerPath}`;
   }

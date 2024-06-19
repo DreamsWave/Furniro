@@ -72,7 +72,7 @@ const ProductGridElement = ({
         <Button secondary outlined className="px-8 py-2 text-sm">
           Add to cart
         </Button>
-        <div className="mt-8 flex w-fit flex-col justify-around gap-8 px-1 xl:flex-row xl:gap-1">
+        <div className="mt-8 flex w-fit flex-col justify-around gap-8 px-1 xl:flex-row xl:gap-4">
           <button
             className="inline-flex items-center justify-center gap-1 font-poppinsSemibold text-base hover:text-primary"
             onClick={(e) => {

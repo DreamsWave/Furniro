@@ -1,5 +1,62 @@
-import { Product, ProductsSortByTypes } from "@/types";
+import { Product, ProductReview, ProductsSortByTypes } from "@/types";
 import { getImageUrl } from "@/utils";
+
+export const productReviews: ProductReview[] = [
+  {
+    id: "0",
+    rating: 4,
+    text: "This is a great product, highly recommended!",
+    author: "John Doe",
+    createdAt: "2024-05-01",
+  },
+  {
+    id: "1",
+    rating: 3,
+    text: "I had some issues with this product, but it still works fine.",
+    author: "Jane Smith",
+    createdAt: "2024-05-03",
+  },
+  {
+    id: "2",
+    rating: 5,
+    text: "I love this product! It's amazing and worth every penny.",
+    author: "Bob Johnson",
+    createdAt: "2024-05-05",
+  },
+  {
+    id: "3",
+    rating: 4,
+    text: "This product is okay, but I would recommend buying a different one.",
+    author: "Alice Williams",
+    createdAt: "2024-05-07",
+  },
+  {
+    id: "4",
+    rating: 4,
+    text: "I've been using this product for a few months now and it's been great.",
+    author: "Bob Doe",
+    createdAt: "2024-05-09",
+  },
+  {
+    id: "5",
+    rating: 3,
+    text: "I had some issues with this product, but it still works fine.",
+    author: "Eva Smith",
+    createdAt: "2024-05-11",
+  },
+];
+
+const productRating = Number(
+  parseFloat(
+    String(
+      productReviews.reduce((acc, review) => acc + review.rating, 0) /
+        productReviews.length,
+    ),
+  ).toFixed(1),
+);
+
+const productDescription = `Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road. 
+Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.`;
 
 export const products: Product[] = [
   {
@@ -11,6 +68,10 @@ export const products: Product[] = [
     discountPercent: 30,
     image: "image-1.webp",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "1",
@@ -21,6 +82,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-2.webp",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "2",
@@ -31,6 +96,10 @@ export const products: Product[] = [
     discountPercent: 50,
     image: "image-3.webp",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "3",
@@ -41,6 +110,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-4.webp",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "4",
@@ -51,6 +124,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-5.webp",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "5",
@@ -61,6 +138,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-6.webp",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "6",
@@ -71,6 +152,10 @@ export const products: Product[] = [
     discountPercent: 50,
     image: "image-7.webp",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "7",
@@ -81,6 +166,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-8.webp",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "8",
@@ -91,6 +180,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-9.webp",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "9",
@@ -101,6 +194,10 @@ export const products: Product[] = [
     discountPercent: 10,
     image: "image-10.jpeg",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "10",
@@ -111,6 +208,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-11.jpeg",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "11",
@@ -121,6 +222,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-12.jpeg",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "12",
@@ -131,6 +236,10 @@ export const products: Product[] = [
     discountPercent: 20,
     image: "image-13.jpeg",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "13",
@@ -141,6 +250,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-14.jpeg",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "14",
@@ -151,6 +264,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-15.jpeg",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "15",
@@ -161,6 +278,10 @@ export const products: Product[] = [
     discountPercent: 5,
     image: "image-4.webp",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "16",
@@ -171,6 +292,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-5.webp",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "17",
@@ -181,6 +306,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-6.webp",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "18",
@@ -191,6 +320,10 @@ export const products: Product[] = [
     discountPercent: 15,
     image: "image-7.webp",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "19",
@@ -201,6 +334,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-8.webp",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "20",
@@ -211,6 +348,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-9.webp",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "21",
@@ -221,6 +362,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-13.jpeg",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "22",
@@ -231,6 +376,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-14.jpeg",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "23",
@@ -241,6 +390,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-15.jpeg",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "24",
@@ -251,6 +404,10 @@ export const products: Product[] = [
     discountPercent: 20,
     image: "image-1.webp",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "25",
@@ -261,6 +418,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-2.webp",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "26",
@@ -271,6 +432,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-3.webp",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "27",
@@ -281,6 +446,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-4.webp",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "28",
@@ -291,6 +460,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-5.webp",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "29",
@@ -301,6 +474,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-6.webp",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "30",
@@ -311,6 +488,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-7.webp",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "31",
@@ -321,6 +502,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-8.webp",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "32",
@@ -331,6 +516,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-9.webp",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "33",
@@ -341,6 +530,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-10.jpeg",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "34",
@@ -351,6 +544,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-11.jpeg",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "35",
@@ -361,6 +558,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-12.jpeg",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "36",
@@ -371,6 +572,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-13.jpeg",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "37",
@@ -381,6 +586,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-14.jpeg",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "38",
@@ -391,6 +600,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-15.jpeg",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "39",
@@ -401,6 +614,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-1.webp",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "40",
@@ -411,6 +628,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-2.webp",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "41",
@@ -421,6 +642,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-3.webp",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "42",
@@ -431,6 +656,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-4.webp",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "43",
@@ -441,6 +670,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-5.webp",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "44",
@@ -451,6 +684,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-6.webp",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "45",
@@ -461,6 +698,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-7.webp",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "46",
@@ -471,6 +712,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-8.webp",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "47",
@@ -481,6 +726,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-9.webp",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "48",
@@ -491,6 +740,10 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-10.jpeg",
     isNew: false,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
   {
     id: "49",
@@ -501,17 +754,26 @@ export const products: Product[] = [
     discountPercent: null,
     image: "image-10.jpeg",
     isNew: true,
+    reviews: productReviews,
+    rating: productRating,
+    fullDescription: productDescription,
+    images: ["image-1.webp", "image-2.webp", "image-3.webp", "image-4.webp"],
   },
 ];
 
+export const updateProductImagePaths = (product: Product) => {
+  const updatedProduct = {
+    ...product,
+    image: getImageUrl(product.image, "furniture"),
+    images: product.images
+      ? product.images.map((image) => getImageUrl(image, "furniture"))
+      : [],
+  };
+  return updatedProduct;
+};
+
 export const updateProductsImagePaths = (products: Product[]) => {
-  const updatedProducts = products.map((product) => {
-    return {
-      ...product,
-      image: getImageUrl(product.image, "furniture"),
-    };
-  });
-  return updatedProducts;
+  return products.map(updateProductImagePaths);
 };
 
 export const getProducts = async ({
@@ -552,10 +814,7 @@ export const getProduct = async (id: string) => {
     throw new Error("Product not found");
   }
 
-  const updatedProduct = {
-    ...product,
-    image: getImageUrl(product.image, "furniture"),
-  };
+  const updatedProduct = updateProductImagePaths(product);
 
   return updatedProduct;
 };

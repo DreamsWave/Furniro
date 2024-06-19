@@ -1,21 +1,19 @@
-import { getProduct } from "@/products";
+import { getProduct, getProducts } from "@/products";
 import { Product } from "@/types";
 import Layout from "@/components/Layout";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-} from "@/components/ui/breadcrumb";
-
+import { useParams } from "react-router-dom";
 import PageBar from "@/components/PageBar";
-import { ChevronRight } from "lucide-react";
+import Breadcrumbs from "./Breadcrumbs";
+import Gallery from "./Gallery";
+import Actions from "./Actions";
+import Header from "./Header";
+import Information from "./Information";
+import RelatedProducts from "./RelatedProducts";
 
 const ProductPage = () => {
   const { id } = useParams();
+  const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
 
   const [product, setProduct] = useState<Product>();
   useEffect(() => {
@@ -27,38 +25,28 @@ const ProductPage = () => {
     loadProduct();
   }, [id]);
 
+  useEffect(() => {
+    async function loadRelatedProducts() {
+      const products = await getProducts({ count: 4 });
+      setRelatedProducts(products);
+    }
+    loadRelatedProducts();
+  }, [id]);
+
+  if (!product) return "...";
+
   return (
     <Layout pageTitle={product?.title ? product.title : "Product"}>
       <PageBar className="flex items-center">
-        <Breadcrumb className="font-poppins text-base">
-          <BreadcrumbList className="space-x-4">
-            <BreadcrumbItem>
-              <BreadcrumbLink asChild>
-                <Link to="/" className="text-base text-text-color-400">
-                  Home
-                </Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <ChevronRight size={20} className="stroke-text-color" />
-            <BreadcrumbItem>
-              <BreadcrumbLink asChild>
-                <Link to="/shop" className="text-base text-text-color-400">
-                  Shop
-                </Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <ChevronRight size={20} className="stroke-text-color" />
-            <div className="h-10 w-[2px] bg-text-color-400"></div>
-            <BreadcrumbItem>
-              <BreadcrumbPage className="text-base">
-                {product?.title ? product.title : "..."}
-              </BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+        <Breadcrumbs title={product?.title ? product.title : "..."} />
       </PageBar>
-      {!product && "Loading..."}
-      <div>{product?.title}</div>
+      <div className="grid-col-1 md:grid-col-2 grid">
+        <Header product={product} />
+        <Gallery />
+        <Actions />
+      </div>
+      <Information />
+      <RelatedProducts products={relatedProducts} />
     </Layout>
   );
 };
