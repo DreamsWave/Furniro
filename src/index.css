@@ -92,6 +92,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
 @layer components {
   .container {
     @apply md:px-8 lg:px-12;

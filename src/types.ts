@@ -1,11 +1,6 @@
-export type ProductColor =
-  | "red"
-  | "blue"
-  | "green"
-  | "yellow"
-  | "purple"
-  | "black"
-  | "white";
+import { DefaultColors } from "tailwindcss/types/generated/colors";
+
+export type ProductColor = keyof DefaultColors;
 export type ProductSize = "XS" | "S" | "M" | "L" | "XL" | "XXL";
 export type ProductCategory = "sofas" | "lamps" | "desks";
 export type Tag = "Home" | "Shop" | "Chair" | "Sofa";

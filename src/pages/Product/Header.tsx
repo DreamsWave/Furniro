@@ -1,3 +1,4 @@
+import RatingStars from "@/components/RatingStars";
 import { Product } from "@/types";
 import { cn } from "@/utils";
 
@@ -11,12 +12,12 @@ const Header = ({ product, className }: HeaderProps) => {
       <h2 className="font-poppins text-[42px] text-text-color">
         {product.title}
       </h2>
-      <p className="mb-2 font-poppinsMedium text-2xl text-text-color-400">
+      <p className="mb-4 font-poppinsMedium text-2xl text-text-color-400">
         {product.currency} {product.price}
       </p>
-      <div className="mb-2 flex items-center space-x-6">
-        <div>{product.rating}</div>
-        <div className="h-full w-[1px] bg-text-color-400"></div>
+      <div className="mb-4 flex items-center space-x-6">
+        <RatingStars rating={product.rating} />
+        <div className="h-full w-[2px] bg-text-color-400/50"></div>
         <p className="font-poppins text-sm text-text-color-400">
           {product.reviews.length} Customer Review
         </p>
