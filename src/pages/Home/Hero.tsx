@@ -3,7 +3,7 @@ import Button from "@/components/Button";
 const Hero = () => {
   return (
     <section className="flex min-h-[700px] items-center justify-center bg-[url('/images/heroes/home-page-image.jpg')] bg-cover bg-center bg-no-repeat">
-      <div className="container mx-auto px-2 lg:px-6">
+      <div className="container-full">
         <div className="flex w-full flex-col items-start gap-4 bg-primary-light px-10 py-14 lg:ml-auto lg:max-w-[50%]">
           <span className="text-base font-semibold text-text-color-100">
             New Arrival

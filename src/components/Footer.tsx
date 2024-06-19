@@ -10,10 +10,10 @@ const Footer = () => {
 
   return (
     <footer className="border-[1px] border-[#d9d9d9]">
-      <div className="flex justify-center container mx-auto px-2 py-12 lg:px-8">
-        <div className="grid grid-cols-1 gap-16 items-start justify-center md:justify-items-stretch md:grid-cols-2 lg:grid-cols-3">
+      <div className="container flex justify-center py-12">
+        <div className="grid grid-cols-1 items-start justify-center gap-16 md:grid-cols-2 md:justify-items-stretch lg:grid-cols-3">
           <div>
-            <h3 className="font-poppinsBold text-2xl mb-6 md:mb-10 lg:mb-12">
+            <h3 className="mb-6 font-poppinsBold text-2xl md:mb-10 lg:mb-12">
               Furniro.
             </h3>
             <p className="font-poppins text-base text-text-color-400">
@@ -24,10 +24,10 @@ const Footer = () => {
           </div>
           <div className="flex space-x-12 md:row-span-2 md:justify-around">
             <div>
-              <h4 className="font-poppinsMedium text-base mb-6 text-text-color-400 md:mb-10 lg:mb-12">
+              <h4 className="mb-6 font-poppinsMedium text-base text-text-color-400 md:mb-10 lg:mb-12">
                 Links
               </h4>
-              <ul className="font-poppinsMedium text-base space-y-6 md:space-y-8 lg:space-y-12">
+              <ul className="space-y-6 font-poppinsMedium text-base md:space-y-8 lg:space-y-12">
                 <li>
                   <Link to={"/"} className="hover:text-primary">
                     Home
@@ -51,10 +51,10 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-poppinsMedium text-base mb-6 text-text-color-400 md:mb-10 lg:mb-12">
+              <h4 className="mb-6 font-poppinsMedium text-base text-text-color-400 md:mb-10 lg:mb-12">
                 Help
               </h4>
-              <ul className="font-poppinsMedium text-base space-y-6 md:space-y-12">
+              <ul className="space-y-6 font-poppinsMedium text-base md:space-y-12">
                 <li>
                   <Link to={"/payment-options"} className="hover:text-primary">
                     Payment Options
@@ -74,20 +74,20 @@ const Footer = () => {
             </div>
           </div>
           <div>
-            <h4 className="font-poppinsMedium text-base mb-6 text-text-color-400 md:mb-10 lg:mb-12">
+            <h4 className="mb-6 font-poppinsMedium text-base text-text-color-400 md:mb-10 lg:mb-12">
               Newsletter
             </h4>
             <form onSubmit={handleNewsletterSubmit}>
               <input
                 type="email"
-                className="font-poppins text-sm bg-transparent border-b-[1px] border-b-black mr-3 py-1 outline-none placeholder:text-text-color-400"
+                className="mr-3 border-b-[1px] border-b-black bg-transparent py-1 font-poppins text-sm outline-none placeholder:text-text-color-400"
                 placeholder="Enter Your Email Address"
                 value={newsletterEmail}
                 onChange={(e) => setNewsletterEmail(e.target.value)}
               />
               <button
                 type="submit"
-                className="uppercase font-poppinsMedium text-sm border-b-[1px] py-1 border-b-black hover:text-primary"
+                className="border-b-[1px] border-b-black py-1 font-poppinsMedium text-sm uppercase hover:text-primary"
               >
                 Subscribe
               </button>

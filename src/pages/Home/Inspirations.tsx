@@ -63,7 +63,7 @@ const Inspirations = () => {
 
   return (
     <section className="flex flex-col items-center overflow-hidden bg-primary-light py-11">
-      <div className="container mx-auto grid grid-cols-1 gap-0 px-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+      <div className="container grid grid-cols-1 gap-0 px-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
         <div className="mb-4 flex flex-col justify-center md:col-span-1">
           <h3 className="mb-2 font-poppinsBold text-4xl text-text-color-100">
             50+ Beautiful rooms inspiration

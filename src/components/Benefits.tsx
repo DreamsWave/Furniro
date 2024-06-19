@@ -3,7 +3,7 @@ import { Gem, Headset, ShieldCheck, Truck } from "lucide-react";
 const Benefits = () => {
   return (
     <section className="bg-primary-light">
-      <div className="container mx-auto px-2 py-14 md:py-24 lg:px-8">
+      <div className="container py-14 md:py-24">
         <div className="mx-auto grid w-fit grid-cols-1 gap-10 md:grid-cols-2 md:gap-20 lg:grid-cols-4">
           <div className="flex items-center space-x-2">
             <Gem size={60} />

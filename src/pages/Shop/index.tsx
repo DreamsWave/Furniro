@@ -129,7 +129,7 @@ const Shop = () => {
           </div>
         </div>
       </PageBar>
-      <div className="container mx-auto px-2 py-8 lg:px-8">
+      <div className="container py-8">
         <ProductsGrid products={products} />
       </div>
       <Pagination className="mb-20 select-none">

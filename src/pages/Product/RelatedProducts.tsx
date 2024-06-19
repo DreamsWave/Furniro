@@ -8,7 +8,7 @@ interface RelatedProductsProps {
 const RelatedProducts = ({ products }: RelatedProductsProps) => {
   return (
     <section className="mt-14 pb-16">
-      <div className="container mx-auto flex flex-col items-center px-2 lg:px-6">
+      <div className="container flex flex-col items-center">
         <h2 className="mb-8 font-poppinsBold text-4xl font-bold text-text-color-100">
           Related Products
         </h2>

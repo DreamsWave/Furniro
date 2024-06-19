@@ -58,8 +58,8 @@ const OurProducts = () => {
 
   return (
     <section className="mt-14 pb-14">
-      <div className="container mx-auto px-2 flex flex-col items-center lg:px-6">
-        <h2 className="font-poppinsBold text-4xl font-bold text-text-color-100 mb-8">
+      <div className="container flex flex-col items-center">
+        <h2 className="mb-8 font-poppinsBold text-4xl font-bold text-text-color-100">
           Our Products
         </h2>
         <ProductsGrid products={products} showCount={showCount} />

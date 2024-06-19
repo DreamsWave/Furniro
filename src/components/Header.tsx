@@ -4,8 +4,8 @@ import Logo from "@/components/Logo";
 
 const Header = () => {
   return (
-    <header className="bg-white w-full sticky top-0 z-40">
-      <div className="container mx-auto flex justify-between items-center py-6 px-2 flex-wrap gap-4 lg:px-6">
+    <header className="sticky top-0 z-40 w-full bg-white">
+      <div className="container-full flex flex-wrap items-center justify-between gap-4 py-6">
         <Logo />
         <nav className="hidden lg:flex">
           <ul className="flex gap-4 text-black md:gap-8 lg:gap-16">
