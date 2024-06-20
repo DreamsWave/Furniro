@@ -13,3 +13,7 @@ export function getImageUrl(fullname: string, innerPath?: string): string {
   imagePath += `/${fullname}`;
   return imagePath;
 }
+
+export function getDiscountedPrice(price: number, discount: number): number {
+  return price - (price * discount) / 100;
+}

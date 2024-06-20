@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { addProduct } from "@/features/cart/cartSlice";
 import { Product, ProductColor, ProductSize } from "@/types";
 import { cn } from "@/utils";
 import { Facebook, Linkedin, Minus, Plus, Twitter } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import colors from "tailwindcss/colors";
 
 interface ActionsProps {
@@ -13,6 +15,11 @@ const Actions = ({ product, className }: ActionsProps) => {
   const [activeSize, setActiveSize] = useState<ProductSize>();
   const [activeColor, setActiveColor] = useState<ProductColor>("black");
   const [count, setCount] = useState(1);
+  const dispatch = useDispatch();
+
+  function handleAddToCart() {
+    dispatch(addProduct({ productId: product.id, quantity: count }));
+  }
 
   useEffect(() => {
     if (product.sizes) {
@@ -108,6 +115,7 @@ const Actions = ({ product, className }: ActionsProps) => {
           <Button
             className="flex h-16 w-full rounded-2xl border-black px-12 font-poppins text-xl md:w-auto"
             variant="outline"
+            onClick={handleAddToCart}
           >
             Add to Cart
           </Button>

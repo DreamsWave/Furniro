@@ -1050,12 +1050,16 @@ export const getProducts = async ({
   count,
   from,
   sortBy,
+  ids,
 }: {
   count?: number;
   from?: number;
   sortBy?: ProductsSortByTypes;
+  ids?: string[];
 }) => {
-  const sortedProducts = [...products];
+  const sortedProducts = ids
+    ? products.filter((product) => ids.includes(product.id))
+    : products;
 
   switch (sortBy) {
     case "price":

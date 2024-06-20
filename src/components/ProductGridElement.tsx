@@ -3,7 +3,9 @@ import { Share2, ArrowRightLeft, Heart, Image } from "lucide-react";
 import Button from "@/components/Button";
 import { Product } from "@/types";
 import { useState } from "react";
-import { cn } from "@/utils";
+import { cn, getDiscountedPrice } from "@/utils";
+import { useDispatch } from "react-redux";
+import { addProduct } from "@/features/cart/cartSlice";
 
 export const PlaceholderImage = () => {
   return (
@@ -26,9 +28,12 @@ const ProductGridElement = ({
     price,
     discountPercent = 0,
     isNew = false,
+    id,
   },
 }: ProductGridElementProps) => {
   const [showPlaceholderImage, setShowPlaceholderImage] = useState(false);
+  const dispatch = useDispatch();
+
   return (
     <Link
       to={linkTo}
@@ -60,16 +65,22 @@ const ProductGridElement = ({
               </span>
             )}
             <span>
-              {currency}{" "}
-              {Number(
-                Number(price) - (Number(discountPercent) / 100) * Number(price),
-              ).toLocaleString("en-GB")}
+              {currency} {getDiscountedPrice(price, Number(discountPercent))}
             </span>
           </div>
         </div>
       </div>
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black bg-opacity-60 text-white opacity-0 transition-opacity group-hover:opacity-100">
-        <Button secondary outlined className="px-8 py-2 text-sm">
+        <Button
+          secondary
+          outlined
+          className="px-8 py-2 text-sm"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dispatch(addProduct({ productId: id }));
+          }}
+        >
           Add to cart
         </Button>
         <div className="mt-8 flex w-fit flex-col justify-around gap-8 px-1 xl:flex-row xl:gap-4">

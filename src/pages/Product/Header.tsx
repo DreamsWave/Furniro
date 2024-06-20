@@ -1,6 +1,6 @@
 import RatingStars from "@/components/RatingStars";
 import { Product } from "@/types";
-import { cn } from "@/utils";
+import { cn, getDiscountedPrice } from "@/utils";
 
 interface HeaderProps {
   product: Product;
@@ -12,9 +12,17 @@ const Header = ({ product, className }: HeaderProps) => {
       <h2 className="font-poppins text-[42px] text-text-color">
         {product.title}
       </h2>
-      <p className="mb-4 font-poppinsMedium text-2xl text-text-color-400">
-        {product.currency} {product.price}
-      </p>
+      <div className="mb-4 flex gap-2 font-poppinsMedium text-2xl">
+        <span className="text-text-color-100">
+          {product.currency}{" "}
+          {getDiscountedPrice(product.price, Number(product.discountPercent))}
+        </span>
+        {product.discountPercent && (
+          <span className="text-lg text-text-color-400 line-through">
+            {product.currency} {product.price}
+          </span>
+        )}
+      </div>
       <div className="mb-4 flex items-center space-x-6">
         <RatingStars rating={product.rating} />
         <div className="h-full w-[2px] bg-text-color-400/50"></div>

@@ -8,7 +8,7 @@ interface ButtonProps {
   secondary?: boolean;
   className?: string;
   wide?: boolean;
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>;
 }
 
 const Button = ({
