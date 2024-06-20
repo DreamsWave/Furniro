@@ -1,5 +1,6 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@radix-ui/react-tabs";
 import { Product } from "@/types";
+import InfoGrid from "@/components/InfoGrid";
 
 interface InformationProps {
   product: Product;
@@ -36,9 +37,13 @@ const Information = ({ product }: InformationProps) => {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="description" className="description container">
-            <div className="container-sm mb-8">
-              <p>{product.fullDescription}</p>
-            </div>
+            {product.fullDescription && (
+              <div className="container-sm mb-8">
+                <div
+                  dangerouslySetInnerHTML={{ __html: product.fullDescription }}
+                ></div>
+              </div>
+            )}
             <div>
               {hasImages && (
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-7">
@@ -69,7 +74,7 @@ const Information = ({ product }: InformationProps) => {
             </div>
           </TabsContent>
           <TabsContent value="additional" className="container-sm">
-            Change your password here.
+            <InfoGrid className="pt-8" />
           </TabsContent>
           <TabsContent value="reviews" className="container-sm">
             Reviews are here.
