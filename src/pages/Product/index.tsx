@@ -10,6 +10,7 @@ import Actions from "./Actions";
 import Header from "./Header";
 import Information from "./Information";
 import RelatedProducts from "./RelatedProducts";
+import { Separator } from "@/components/ui/separator";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -40,7 +41,7 @@ const ProductPage = () => {
       <PageBar className="flex items-center">
         <Breadcrumbs title={product?.title ? product.title : "..."} />
       </PageBar>
-      <div className="grid-col-1 md:grid-col-2 container grid gap-5 py-8 md:grid-cols-[repeat(2,_1fr)]">
+      <div className="grid-col-1 md:grid-col-2 container grid gap-x-20 gap-y-10 py-8 pb-14 md:grid-cols-[repeat(2,_1fr)]">
         <Header product={product} className="md:col-span-2 md:col-start-2" />
         <Gallery
           product={product}
@@ -48,6 +49,7 @@ const ProductPage = () => {
         />
         <Actions product={product} className="md:col-span-2 md:col-start-2" />
       </div>
+      <Separator />
       <Information />
       <RelatedProducts products={relatedProducts} />
     </Layout>
