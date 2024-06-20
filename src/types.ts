@@ -11,6 +11,7 @@ export interface ProductReview {
   text: string;
   createdAt: string;
   author: string;
+  avatar: string;
 }
 
 export interface Product {

@@ -21,7 +21,7 @@ const Button = ({
   onClick,
 }: ButtonProps) => {
   const buttonClassName = cn(
-    "bg-primary border-2 border-primary text-white uppercase px-14 py-4 inline-flex transition-all hover:bg-white hover:text-primary whitespace-nowrap",
+    "w-fit bg-primary border-2 border-primary text-white uppercase px-14 py-4 inline-flex transition-all hover:bg-white hover:text-primary whitespace-nowrap",
     outlined && "bg-white text-primary hover:bg-primary hover:text-white",
     secondary && "border-white py-3 px-14 hover:border-primary",
     wide && "py-3 px-20",

@@ -8,6 +8,7 @@ export const productReviews: ProductReview[] = [
     text: "This is a great product, highly recommended!",
     author: "John Doe",
     createdAt: "2024-05-01",
+    avatar: "m-1.png",
   },
   {
     id: "1",
@@ -15,6 +16,7 @@ export const productReviews: ProductReview[] = [
     text: "I had some issues with this product, but it still works fine.",
     author: "Jane Smith",
     createdAt: "2024-05-03",
+    avatar: "f-1.png",
   },
   {
     id: "2",
@@ -22,6 +24,7 @@ export const productReviews: ProductReview[] = [
     text: "I love this product! It's amazing and worth every penny.",
     author: "Bob Johnson",
     createdAt: "2024-05-05",
+    avatar: "m-2.png",
   },
   {
     id: "3",
@@ -29,6 +32,7 @@ export const productReviews: ProductReview[] = [
     text: "This product is okay, but I would recommend buying a different one.",
     author: "Alice Williams",
     createdAt: "2024-05-07",
+    avatar: "f-2.png",
   },
   {
     id: "4",
@@ -36,6 +40,7 @@ export const productReviews: ProductReview[] = [
     text: "I've been using this product for a few months now and it's been great.",
     author: "Bob Doe",
     createdAt: "2024-05-09",
+    avatar: "m-3.png",
   },
   {
     id: "5",
@@ -43,6 +48,7 @@ export const productReviews: ProductReview[] = [
     text: "I had some issues with this product, but it still works fine.",
     author: "Eva Smith",
     createdAt: "2024-05-11",
+    avatar: "f-3.png",
   },
 ];
 
@@ -1025,6 +1031,12 @@ export const updateProductImagePaths = (product: Product) => {
     image: getImageUrl(product.image, "furniture"),
     images: product.images
       ? product.images.map((image) => getImageUrl(image, "furniture"))
+      : [],
+    reviews: product.reviews
+      ? product.reviews.map((review) => ({
+          ...review,
+          avatar: getImageUrl(review.avatar, "avatars"),
+        }))
       : [],
   };
   return updatedProduct;

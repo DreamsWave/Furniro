@@ -16,8 +16,8 @@ const InfoGrid = ({ isComparison = false, className }: InfoGridProps) => {
         <h3 className={cn("mb-7 font-poppinsMedium text-3xl text-text-color")}>
           General
         </h3>
-        <div className={cn("grid grid-cols-2")}>
-          <ul className="text- flex flex-col gap-8">
+        <div className={cn("grid grid-cols-2 gap-2")}>
+          <ul className="flex flex-col gap-8">
             <li>Sales Package</li>
             <li>Model Number</li>
             <li>Secondary Material</li>
@@ -49,7 +49,7 @@ const InfoGrid = ({ isComparison = false, className }: InfoGridProps) => {
         <h3 className="mb-7 font-poppinsMedium text-3xl text-text-color">
           Product
         </h3>
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-2 gap-2">
           <ul className="flex flex-col gap-8">
             <li>Filling Material</li>
             <li>Finish Type</li>
@@ -79,7 +79,7 @@ const InfoGrid = ({ isComparison = false, className }: InfoGridProps) => {
         <h3 className="mb-7 font-poppinsMedium text-3xl text-text-color">
           Dimensions
         </h3>
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-2 gap-2">
           <ul className="flex flex-col gap-8">
             <li>Width</li>
             <li>Height</li>
@@ -112,7 +112,7 @@ const InfoGrid = ({ isComparison = false, className }: InfoGridProps) => {
         <h3 className="mb-7 font-poppinsMedium text-3xl text-text-color">
           Warranty
         </h3>
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-2 gap-2">
           <ul className="flex flex-col gap-8">
             <li>Warranty Summary</li>
             <li>Warranty Service Type</li>

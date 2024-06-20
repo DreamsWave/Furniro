@@ -1,6 +1,7 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@radix-ui/react-tabs";
 import { Product } from "@/types";
 import InfoGrid from "@/components/InfoGrid";
+import Reviews from "./Reviews";
 
 interface InformationProps {
   product: Product;
@@ -16,7 +17,7 @@ const Information = ({ product }: InformationProps) => {
           defaultValue="description"
           className="font-poppins text-base text-text-color-400"
         >
-          <TabsList className="mb-9 flex justify-center space-x-6 font-poppinsMedium text-base text-text-color-400 md:space-x-8 lg:space-x-12">
+          <TabsList className="mb-9 flex justify-center space-x-4 font-poppinsMedium text-sm text-text-color-400 md:space-x-8 md:text-base lg:space-x-12 lg:text-lg">
             <TabsTrigger
               value="description"
               className="data-[state=active]:text-black"
@@ -77,7 +78,7 @@ const Information = ({ product }: InformationProps) => {
             <InfoGrid className="pt-8" />
           </TabsContent>
           <TabsContent value="reviews" className="container-sm">
-            Reviews are here.
+            <Reviews className="pt-8" product={product} />
           </TabsContent>
         </Tabs>
       </div>
