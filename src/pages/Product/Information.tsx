@@ -1,5 +1,83 @@
-const Information = () => {
-  return <div>Information with tabs</div>;
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@radix-ui/react-tabs";
+import { Product } from "@/types";
+
+interface InformationProps {
+  product: Product;
+}
+
+const Information = ({ product }: InformationProps) => {
+  const hasImages = product.images && product.images.length > 0;
+
+  return (
+    <section>
+      <div className="container py-12">
+        <Tabs
+          defaultValue="description"
+          className="font-poppins text-base text-text-color-400"
+        >
+          <TabsList className="mb-9 flex justify-center space-x-6 font-poppinsMedium text-base text-text-color-400 md:space-x-8 lg:space-x-12">
+            <TabsTrigger
+              value="description"
+              className="data-[state=active]:text-black"
+            >
+              Description
+            </TabsTrigger>
+            <TabsTrigger
+              value="additional"
+              className="data-[state=active]:text-black"
+            >
+              Additional Information
+            </TabsTrigger>
+            <TabsTrigger
+              value="reviews"
+              className="data-[state=active]:text-black"
+            >
+              Reviews [{product.reviews ? product.reviews.length : 0}]
+            </TabsTrigger>
+          </TabsList>
+          <TabsContent value="description" className="description container">
+            <div className="container-sm mb-8">
+              <p>{product.fullDescription}</p>
+            </div>
+            <div>
+              {hasImages && (
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-7">
+                  {product.images &&
+                    product.images.slice(0, 2).map((image, index) => (
+                      <div
+                        key={index}
+                        className="h-[350px] overflow-hidden rounded-lg"
+                      >
+                        <img
+                          src={image}
+                          alt={`Image ${index}`}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
+                    ))}
+                </div>
+              )}
+              {!hasImages && product.images && (
+                <div className="h-[350px] overflow-hidden rounded-lg">
+                  <img
+                    src={product.images[0]}
+                    alt="Product Image"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              )}
+            </div>
+          </TabsContent>
+          <TabsContent value="additional" className="container-sm">
+            Change your password here.
+          </TabsContent>
+          <TabsContent value="reviews" className="container-sm">
+            Reviews are here.
+          </TabsContent>
+        </Tabs>
+      </div>
+    </section>
+  );
 };
 
 export default Information;

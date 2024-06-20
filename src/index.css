@@ -104,6 +104,9 @@
   .container {
     @apply md:px-8 lg:px-12;
   }
+  .container-sm {
+    @apply container md:px-12 lg:px-32;
+  }
   .container-full {
     @apply container px-4;
   }

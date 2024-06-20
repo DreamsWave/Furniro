@@ -5,12 +5,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PageBar from "@/components/PageBar";
 import Breadcrumbs from "./Breadcrumbs";
-import Gallery from "./Gallery";
-import Actions from "./Actions";
-import Header from "./Header";
 import Information from "./Information";
 import RelatedProducts from "./RelatedProducts";
 import { Separator } from "@/components/ui/separator";
+import Summary from "./Summary";
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -41,16 +39,9 @@ const ProductPage = () => {
       <PageBar className="flex items-center">
         <Breadcrumbs title={product?.title ? product.title : "..."} />
       </PageBar>
-      <div className="grid-col-1 md:grid-col-2 container grid gap-x-20 gap-y-10 py-8 pb-14 md:grid-cols-[repeat(2,_1fr)]">
-        <Header product={product} className="md:col-span-2 md:col-start-2" />
-        <Gallery
-          product={product}
-          className="md:col-span-1 md:row-span-2 md:row-start-1"
-        />
-        <Actions product={product} className="md:col-span-2 md:col-start-2" />
-      </div>
+      <Summary product={product} />
       <Separator />
-      <Information />
+      <Information product={product} />
       <RelatedProducts products={relatedProducts} />
     </Layout>
   );

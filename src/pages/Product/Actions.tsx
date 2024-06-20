@@ -80,7 +80,7 @@ const Actions = ({ product, className }: ActionsProps) => {
           )}
         </div>
       </div>
-      <div className="flex w-fit flex-col space-y-3 border-b-[1px] border-b-text-color-400/50 pb-14 xl:flex-row xl:space-x-3 xl:space-y-0">
+      <div className="flex w-full flex-col space-y-3 border-b-[1px] border-b-text-color-400/50 pb-12 md:w-fit xl:flex-row xl:space-x-3 xl:space-y-0">
         <div className="flex space-x-3">
           <div className="flex">
             <Button
@@ -106,7 +106,7 @@ const Actions = ({ product, className }: ActionsProps) => {
             </Button>
           </div>
           <Button
-            className="flex h-16 rounded-2xl border-black px-12 font-poppins text-xl"
+            className="flex h-16 w-full rounded-2xl border-black px-12 font-poppins text-xl md:w-auto"
             variant="outline"
           >
             Add to Cart
