@@ -11,7 +11,7 @@ const Information = ({ product }: InformationProps) => {
 
   return (
     <section>
-      <div className="container py-12">
+      <div className="py-12">
         <Tabs
           defaultValue="description"
           className="font-poppins text-base text-text-color-400"

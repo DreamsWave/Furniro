@@ -63,7 +63,7 @@ const Actions = ({ product, className }: ActionsProps) => {
                   "flex h-[30px] w-[30px] items-center justify-center rounded-full border-none",
                   color === "black" && "bg-black",
                   color === "white" && "bg-white",
-                  activeColor === color && "ring-2 ring-primary",
+                  activeColor === color && "ring ring-primary",
                 )}
                 onClick={() => setActiveColor(color)}
                 style={{ backgroundColor: colors[color][400] }}
