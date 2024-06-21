@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
-import { User, Search, Heart, ShoppingCart, Menu } from "lucide-react";
+import { User, Search, Heart, Menu } from "lucide-react";
 import Logo from "@/components/Logo";
-import { useSelector } from "react-redux";
-import { RootState } from "@/store";
+import CartDialog from "@/features/cart/CartDialog";
 
 const Header = () => {
-  const cartProductsCount = useSelector(
-    (state: RootState) => state.cart.products,
-  ).length;
+  // const cartProductsCount = useSelector(
+  //   (state: RootState) => state.cart.products,
+  // ).length;
 
   return (
     <header className="sticky top-0 z-40 w-full bg-white">
@@ -54,14 +53,7 @@ const Header = () => {
             </button>
           </li>
           <li className="flex">
-            <Link className="relative hover:text-primary" to="/cart">
-              <ShoppingCart size={28} />
-              {cartProductsCount > 0 && (
-                <span className="absolute bottom-0 right-0 flex h-4 w-4 translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full bg-white font-poppinsBold text-sm text-primary ring-2 ring-primary">
-                  {cartProductsCount}
-                </span>
-              )}
-            </Link>
+            <CartDialog />
           </li>
           <li className="flex lg:hidden">
             <button className="hover:text-primary">

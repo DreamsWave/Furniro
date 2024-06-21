@@ -1,6 +1,6 @@
 import { Product } from "@/types";
 import { cn } from "@/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface GalleryProps {
   product: Product;
@@ -16,6 +16,10 @@ const Gallery = ({ product, className }: GalleryProps) => {
   const allImages = Array.from(uniqueImages);
 
   const [activeImage, setActiveImage] = useState<string>(productImage);
+
+  useEffect(() => {
+    setActiveImage(productImage);
+  }, [productImage]);
 
   return (
     <div className={cn(className, "grid h-fit grid-cols-[80px,1fr] gap-8")}>

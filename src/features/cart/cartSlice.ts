@@ -59,6 +59,11 @@ export const cartSlice = createSlice({
   },
 });
 
+const storedCartProducts = localStorage.getItem("cartProducts");
+if (storedCartProducts) {
+  initialState.products = JSON.parse(storedCartProducts);
+}
+
 export const {
   addProduct,
   removeProduct,

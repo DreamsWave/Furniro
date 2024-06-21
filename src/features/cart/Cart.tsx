@@ -58,8 +58,8 @@ const Cart = () => {
 
   if (products.length === 0)
     return (
-      <section className="container py-8">
-        <h3 className="mb-4">Cart is empty</h3>
+      <section className="container flex flex-col items-center py-8">
+        <h3 className="mb-6 text-2xl">Cart is empty</h3>
         <Button linkTo="/shop">Show Products</Button>
       </section>
     );
@@ -178,7 +178,12 @@ const Cart = () => {
               </span>
             </div>
           </div>
-          <Button outlined>Check Out</Button>
+          <Button
+            outlined
+            className="rounded-xl border-text-color bg-primary-light font-poppins text-xl capitalize text-text-color hover:border-primary hover:bg-primary hover:text-white"
+          >
+            Check Out
+          </Button>
         </div>
       </div>
     </section>
