@@ -1,8 +1,9 @@
+import InputNumber from "@/components/InputNumber";
 import { Button } from "@/components/ui/button";
 import { addProduct } from "@/features/cart/cartSlice";
 import { Product, ProductColor, ProductSize } from "@/types";
 import { cn } from "@/utils";
-import { Facebook, Linkedin, Minus, Plus, Twitter } from "lucide-react";
+import { Facebook, Linkedin, Plus, Twitter } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import colors from "tailwindcss/colors";
@@ -14,11 +15,15 @@ interface ActionsProps {
 const Actions = ({ product, className }: ActionsProps) => {
   const [activeSize, setActiveSize] = useState<ProductSize>();
   const [activeColor, setActiveColor] = useState<ProductColor>("black");
-  const [count, setCount] = useState(1);
+  const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
 
   function handleAddToCart() {
-    dispatch(addProduct({ productId: product.id, quantity: count }));
+    dispatch(addProduct({ productId: product.id, quantity }));
+  }
+
+  function handleQuantityChange(value: number) {
+    setQuantity(value);
   }
 
   useEffect(() => {
@@ -89,29 +94,11 @@ const Actions = ({ product, className }: ActionsProps) => {
       </div>
       <div className="flex w-full flex-col space-y-3 border-b-[1px] border-b-text-color-400/50 pb-12 md:w-fit xl:flex-row xl:space-x-3 xl:space-y-0">
         <div className="flex space-x-3">
-          <div className="flex">
-            <Button
-              className="flex h-16 rounded-xl rounded-r-none border-r-0 border-text-color-400 px-2"
-              variant="outline"
-              onClick={() => setCount(count === 1 ? 1 : count - 1)}
-            >
-              <Minus size={12} />
-            </Button>
-            <input
-              type="number"
-              className="w-16 border-b-[1px] border-t-[1px] border-text-color-400 bg-white text-center font-poppinsMedium text-base outline-none"
-              value={count}
-              min={1}
-              onChange={(e) => setCount(parseInt(e.target.value))}
-            />
-            <Button
-              className="flex h-16 rounded-xl rounded-l-none border-l-0 border-text-color-400 px-2"
-              variant="outline"
-              onClick={() => setCount(count + 1)}
-            >
-              <Plus size={12} />
-            </Button>
-          </div>
+          <InputNumber
+            defaultNumber={quantity}
+            min={1}
+            onValueChange={handleQuantityChange}
+          />
           <Button
             className="flex h-16 w-full rounded-2xl border-black px-12 font-poppins text-xl md:w-auto"
             variant="outline"

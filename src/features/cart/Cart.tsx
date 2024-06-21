@@ -86,6 +86,8 @@ const Cart = () => {
                     </TableCell>
                     <TableCell>
                       <InputNumber
+                        small
+                        showButtonsOnHover
                         min={0}
                         defaultNumber={quantity}
                         onValueChange={(value) => {
