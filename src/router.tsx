@@ -5,7 +5,8 @@ import ContactsPage from "@/pages/Contacts";
 import AboutPage from "@/pages/About";
 import ProductPage from "@/pages/Product";
 import NotFoundPage from "@/pages/404";
-import Cart from "./pages/Cart";
+import CartPage from "./pages/Cart";
+import ComparisonPage from "./pages/Comparison";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
   },
   {
     path: "/cart",
-    element: <Cart />,
+    element: <CartPage />,
+  },
+  {
+    path: "/comparison",
+    element: <ComparisonPage />,
   },
 ]);

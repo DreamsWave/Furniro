@@ -10,6 +10,7 @@ import cartReducer, {
   decreaseProductQuantity,
   CartProduct,
 } from "@/features/cart/cartSlice";
+import comparisonReducer from "@/features/comparison/comparisonSlice";
 
 const localStorageMiddleware = createListenerMiddleware();
 
@@ -30,6 +31,7 @@ localStorageMiddleware.startListening({
 export const store = configureStore({
   reducer: {
     cart: cartReducer,
+    comparison: comparisonReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().prepend(localStorageMiddleware.middleware),

@@ -21,6 +21,7 @@ import InputNumber from "@/components/InputNumber";
 import { Link } from "react-router-dom";
 import Button from "@/components/Button";
 import { Trash } from "lucide-react";
+import RemoveFromCartButton from "./RemoveFromCartButton";
 
 const Cart = () => {
   const cartProducts = useSelector((state: RootState) => state.cart.products);
@@ -147,14 +148,7 @@ const Cart = () => {
                         {product.currency} {quantity * price}
                       </TableCell>
                       <TableCell className="text-right">
-                        <button
-                          onClick={() => dispatch(removeProduct(product.id))}
-                        >
-                          <Trash
-                            size={24}
-                            className="fill-primary stroke-primary"
-                          />
-                        </button>
+                        <RemoveFromCartButton productId={product.id} />
                       </TableCell>
                     </TableRow>
                   );

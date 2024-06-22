@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom";
-import { User, Search, Heart, Menu } from "lucide-react";
+import { User, Search, Menu } from "lucide-react";
 import Logo from "@/components/Logo";
 import CartDialog from "@/features/cart/CartDialog";
+import ComparisonLink from "@/features/comparison/ComparisonLink";
 
 const Header = () => {
-  // const cartProductsCount = useSelector(
-  //   (state: RootState) => state.cart.products,
-  // ).length;
-
   return (
     <header className="sticky top-0 z-40 w-full bg-white">
       <div className="container-full flex flex-wrap items-center justify-between gap-4 py-6">
@@ -48,9 +45,7 @@ const Header = () => {
             </button>
           </li>
           <li className="flex">
-            <button className="hover:text-primary">
-              <Heart size={28} />
-            </button>
+            <ComparisonLink />
           </li>
           <li className="flex">
             <CartDialog />

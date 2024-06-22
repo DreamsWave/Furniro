@@ -1,11 +1,11 @@
 import InputNumber from "@/components/InputNumber";
 import { Button } from "@/components/ui/button";
-import { addProduct } from "@/features/cart/cartSlice";
+import AddToCartButton from "@/features/cart/AddToCartButton";
+import ComparisonAddButton from "@/features/comparison/ComparisonAddButton";
 import { Product, ProductColor, ProductSize } from "@/types";
 import { cn } from "@/utils";
-import { Facebook, Linkedin, Plus, Twitter } from "lucide-react";
+import { Facebook, Linkedin, Twitter } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
 import colors from "tailwindcss/colors";
 
 interface ActionsProps {
@@ -16,11 +16,6 @@ const Actions = ({ product, className }: ActionsProps) => {
   const [activeSize, setActiveSize] = useState<ProductSize>();
   const [activeColor, setActiveColor] = useState<ProductColor>("black");
   const [quantity, setQuantity] = useState(1);
-  const dispatch = useDispatch();
-
-  function handleAddToCart() {
-    dispatch(addProduct({ productId: product.id, quantity }));
-  }
 
   function handleQuantityChange(value: number) {
     setQuantity(value);
@@ -99,20 +94,9 @@ const Actions = ({ product, className }: ActionsProps) => {
             min={1}
             onValueChange={handleQuantityChange}
           />
-          <Button
-            className="flex h-16 w-full rounded-2xl border-black px-12 font-poppins text-xl md:w-auto"
-            variant="outline"
-            onClick={handleAddToCart}
-          >
-            Add to Cart
-          </Button>
+          <AddToCartButton productId={product.id} quantity={quantity} />
         </div>
-        <Button
-          className="flex h-16 items-center gap-1 rounded-2xl border-black px-12 font-poppins text-xl"
-          variant="outline"
-        >
-          <Plus size={16} /> Compare
-        </Button>
+        <ComparisonAddButton productId={product.id} />
       </div>
       <div className="mt-10 grid w-fit grid-cols-[min-content_1fr] place-items-baseline items-center gap-3 font-poppins text-base text-text-color-400">
         <span className="relative flex w-full after:absolute after:-right-4 after:content-[':']">
