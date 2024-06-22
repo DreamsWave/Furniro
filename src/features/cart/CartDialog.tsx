@@ -17,7 +17,7 @@ import { CircleX, ShoppingCart, SquareX } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { removeProduct } from "./cartSlice";
+import { removeCartProduct } from "./cartSlice";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const CardDialog = () => {
@@ -131,7 +131,9 @@ const CardDialog = () => {
                           </div>
                         </Link>
                         <button
-                          onClick={() => dispatch(removeProduct(product.id))}
+                          onClick={() =>
+                            dispatch(removeCartProduct(product.id))
+                          }
                           className="group h-fit"
                         >
                           <CircleX

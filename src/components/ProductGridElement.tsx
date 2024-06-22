@@ -5,7 +5,7 @@ import { Product } from "@/types";
 import { useState } from "react";
 import { cn, getDiscountedPrice } from "@/utils";
 import { useDispatch } from "react-redux";
-import { addProduct } from "@/features/cart/cartSlice";
+import { addCartProduct } from "@/features/cart/cartSlice";
 
 export const PlaceholderImage = () => {
   return (
@@ -78,7 +78,7 @@ const ProductGridElement = ({
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
-            dispatch(addProduct({ productId: id }));
+            dispatch(addCartProduct({ productId: id }));
           }}
         >
           Add to cart

@@ -16,7 +16,10 @@ export const comparisonSlice = createSlice({
   name: "comparison",
   initialState,
   reducers: {
-    addProduct: (state, { payload: productId }: PayloadAction<string>) => {
+    addComparisonProduct: (
+      state,
+      { payload: productId }: PayloadAction<string>,
+    ) => {
       const existingProduct = state.products.find(
         (product) => product.productId === productId,
       );
@@ -28,7 +31,7 @@ export const comparisonSlice = createSlice({
         state.products.push(newProduct);
       }
     },
-    removeProduct: (state, action: PayloadAction<string>) => {
+    removeComparisonProduct: (state, action: PayloadAction<string>) => {
       state.products = state.products.filter(
         (product) => product.productId !== action.payload,
       );
@@ -41,6 +44,7 @@ if (storedComparisonProducts) {
   initialState.products = JSON.parse(storedComparisonProducts);
 }
 
-export const { addProduct, removeProduct } = comparisonSlice.actions;
+export const { addComparisonProduct, removeComparisonProduct } =
+  comparisonSlice.actions;
 
 export default comparisonSlice.reducer;

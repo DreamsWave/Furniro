@@ -1,9 +1,9 @@
 import type { RootState } from "@/store";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  increaseProductQuantity,
-  decreaseProductQuantity,
-  removeProduct,
+  increaseCartProductQuantity,
+  decreaseCartProductQuantity,
+  removeCartProduct,
 } from "./cartSlice";
 import {
   Table,
@@ -20,7 +20,6 @@ import { getDiscountedPrice } from "@/utils";
 import InputNumber from "@/components/InputNumber";
 import { Link } from "react-router-dom";
 import Button from "@/components/Button";
-import { Trash } from "lucide-react";
 import RemoveFromCartButton from "./RemoveFromCartButton";
 
 const Cart = () => {
@@ -134,12 +133,12 @@ const Cart = () => {
                           defaultNumber={quantity}
                           onValueChange={(value) => {
                             if (value > quantity) {
-                              dispatch(increaseProductQuantity(product.id));
+                              dispatch(increaseCartProductQuantity(product.id));
                             } else if (value < quantity) {
-                              dispatch(decreaseProductQuantity(product.id));
+                              dispatch(decreaseCartProductQuantity(product.id));
                             }
                             if (value <= 0) {
-                              dispatch(removeProduct(product.id));
+                              dispatch(removeCartProduct(product.id));
                             }
                           }}
                         />

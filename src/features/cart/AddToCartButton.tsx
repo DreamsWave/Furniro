@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useDispatch } from "react-redux";
-import { addProduct } from "./cartSlice";
+import { addCartProduct } from "./cartSlice";
 
 interface AddToCartButtonProps {
   productId: string;
@@ -14,7 +14,7 @@ const AddToCartButton = ({ productId, quantity = 1 }: AddToCartButtonProps) => {
     <Button
       className="flex h-16 w-full rounded-2xl border-black px-12 font-poppins text-xl md:w-auto"
       variant="outline"
-      onClick={() => dispatch(addProduct({ productId, quantity }))}
+      onClick={() => dispatch(addCartProduct({ productId, quantity }))}
     >
       Add to Cart
     </Button>

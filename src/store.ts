@@ -4,27 +4,41 @@ import {
   isAnyOf,
 } from "@reduxjs/toolkit";
 import cartReducer, {
-  addProduct,
-  removeProduct,
-  increaseProductQuantity,
-  decreaseProductQuantity,
+  addCartProduct,
+  removeCartProduct,
+  increaseCartProductQuantity,
+  decreaseCartProductQuantity,
   CartProduct,
 } from "@/features/cart/cartSlice";
-import comparisonReducer from "@/features/comparison/comparisonSlice";
+import comparisonReducer, {
+  ComparisonProduct,
+  addComparisonProduct,
+  removeComparisonProduct,
+} from "@/features/comparison/comparisonSlice";
 
 const localStorageMiddleware = createListenerMiddleware();
 
 localStorageMiddleware.startListening({
   matcher: isAnyOf(
-    addProduct,
-    removeProduct,
-    increaseProductQuantity,
-    decreaseProductQuantity,
+    addCartProduct,
+    removeCartProduct,
+    increaseCartProductQuantity,
+    decreaseCartProductQuantity,
+    addComparisonProduct,
+    removeComparisonProduct,
   ),
   effect: (_, listenerApi) => {
     // @ts-expect-error: Just hide the warning
     const cartProducts = listenerApi.getState().cart.products as CartProduct[];
     localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+
+    // @ts-expect-error: Just hide the warning
+    const comparisonProducts = listenerApi.getState().comparison
+      .products as ComparisonProduct[];
+    localStorage.setItem(
+      "comparisonProducts",
+      JSON.stringify(comparisonProducts),
+    );
   },
 });
 

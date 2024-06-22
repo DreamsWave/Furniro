@@ -1,5 +1,5 @@
 import { Trash } from "lucide-react";
-import { removeProduct } from "./cartSlice";
+import { removeCartProduct } from "./cartSlice";
 import { useDispatch } from "react-redux";
 
 interface RemoveFromCartButtonProps {
@@ -9,7 +9,7 @@ interface RemoveFromCartButtonProps {
 const RemoveFromCartButton = ({ productId }: RemoveFromCartButtonProps) => {
   const dispatch = useDispatch();
   return (
-    <button onClick={() => dispatch(removeProduct(productId))}>
+    <button onClick={() => dispatch(removeCartProduct(productId))}>
       <Trash
         size={24}
         className="fill-transparent stroke-primary hover:fill-primary"
