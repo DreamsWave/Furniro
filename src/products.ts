@@ -1,4 +1,9 @@
-import { Product, ProductReview, ProductsSortByTypes } from "@/types";
+import {
+  Product,
+  ProductDetails,
+  ProductReview,
+  ProductsSortByTypes,
+} from "@/types";
 import { getImageUrl } from "@/utils";
 
 export const productReviews: ProductReview[] = [
@@ -61,6 +66,42 @@ const productRating = Number(
   ).toFixed(1),
 );
 
+const productDetails: ProductDetails = {
+  general: {
+    salesPackage: "1 sectional sofa",
+    modelNumber: "TFCBLIGRBL6SRHS",
+    secondaryMaterial: "Solid Wood",
+    configuration: "L-shaped",
+    upholsteryMaterial: "Fabric + Cotton",
+    upholsteryColor: "Bright Grey & Lion",
+  },
+  product: {
+    fillingMaterial: "Foam",
+    finishType: "Bright Grey & Lion",
+    adjustableHeadrest: "No",
+    maximumLoadCapacity: "280 KG",
+    originOfManufacture: "India",
+  },
+  dimensions: {
+    width: "265.32 cm",
+    height: "76 cm",
+    depth: "167.76 cm",
+    weight: "65 KG",
+    seatHeight: "41.52 cm",
+    legHeight: "5.46 cm",
+  },
+  warranty: {
+    warrantySummary: "1.2 Year Manufacturing Warranty",
+    warrantyServiceType:
+      "For Warranty Claims or Any Product Related Issues Please Email at support@xyz.com",
+    coveredInWarranty:
+      "Warranty of the product is limited to manufacturing defects only.",
+    notCoveredInWarranty:
+      "The Warranty Does Not Cover Damages Due To Usage Of The Product Beyond Its Intended Use And Wear & Tear In The Natural Course Of Product Usage.",
+    domesticWarranty: "3 Months",
+  },
+};
+
 const productDescription = `Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.
 <br />
 <br />
@@ -90,6 +131,7 @@ export const products: Product[] = [
     colors: ["green", "purple", "red"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -109,6 +151,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -128,6 +171,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -147,6 +191,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -166,6 +211,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -185,6 +231,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -204,6 +251,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -223,6 +271,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -242,6 +291,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -261,6 +311,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -280,6 +331,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -299,6 +351,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -318,6 +371,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -337,6 +391,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -356,6 +411,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -375,6 +431,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -394,6 +451,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -413,6 +471,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -432,6 +491,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -451,6 +511,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -470,6 +531,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -489,6 +551,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -508,6 +571,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -527,6 +591,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -546,6 +611,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -565,6 +631,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -584,6 +651,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -603,6 +671,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -622,6 +691,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -641,6 +711,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -660,6 +731,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -679,6 +751,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -698,6 +771,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -717,6 +791,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -736,6 +811,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -755,6 +831,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -774,6 +851,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -793,6 +871,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -812,6 +891,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -831,6 +911,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -850,6 +931,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -869,6 +951,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -888,6 +971,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -907,6 +991,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -926,6 +1011,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -945,6 +1031,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -964,6 +1051,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -983,6 +1071,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -1002,6 +1091,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
   {
@@ -1021,6 +1111,7 @@ export const products: Product[] = [
     colors: ["blue", "black", "yellow"],
     sizes: ["XS", "L", "XL"],
     sku: "SS001",
+    details: productDetails,
     tags: ["Chair", "Home", "Shop", "Sofa"],
   },
 ];

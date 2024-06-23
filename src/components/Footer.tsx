@@ -80,6 +80,8 @@ const Footer = () => {
             <form onSubmit={handleNewsletterSubmit}>
               <input
                 type="email"
+                name="email"
+                autoComplete="true"
                 className="mr-3 border-b-[1px] border-b-black bg-transparent py-1 font-poppins text-sm outline-none placeholder:text-text-color-400"
                 placeholder="Enter Your Email Address"
                 value={newsletterEmail}

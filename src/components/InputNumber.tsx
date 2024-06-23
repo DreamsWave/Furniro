@@ -10,6 +10,7 @@ interface InputNumberProps {
   showButtonsOnHover?: boolean;
   className?: string;
   small?: boolean;
+  name?: string;
 }
 
 const InputNumber = ({
@@ -19,6 +20,7 @@ const InputNumber = ({
   showButtonsOnHover = false,
   className,
   small = false,
+  name = "number",
 }: InputNumberProps) => {
   const [count, setCount] = useState(defaultNumber ?? min);
 
@@ -66,6 +68,7 @@ const InputNumber = ({
       </Button>
       <input
         type="number"
+        name={name}
         className={cn(
           "w-16 border-b-[1px] border-t-[1px] border-text-color-400 bg-white text-center font-poppinsMedium text-base outline-none",
           small && "w-8",

@@ -79,82 +79,84 @@ const CardDialog = () => {
               </AlertDialogCancel>
             </div>
           </AlertDialogTitle>
-          <AlertDialogDescription className="pb-4 pt-6">
-            {!cartProducts.length ? (
-              <h3>Cart is empty</h3>
-            ) : (
-              <ScrollArea className="h-[400px] w-full pb-2 pr-4">
-                <ul className="flex flex-col gap-5">
-                  {products.map((product) => {
-                    const quantity =
-                      cartProducts.find(
-                        (cartProduct) => cartProduct.productId === product.id,
-                      )?.quantity || 1;
-                    const price = product.discountPercent
-                      ? getDiscountedPrice(
-                          product.price,
-                          product.discountPercent,
-                        )
-                      : product.price;
+          <AlertDialogDescription className="pb-4 pt-6" asChild>
+            <div>
+              {!cartProducts.length ? (
+                <h3>Cart is empty</h3>
+              ) : (
+                <ScrollArea className="h-[400px] w-full pb-2 pr-4">
+                  <ul className="flex flex-col gap-5">
+                    {products.map((product) => {
+                      const quantity =
+                        cartProducts.find(
+                          (cartProduct) => cartProduct.productId === product.id,
+                        )?.quantity || 1;
+                      const price = product.discountPercent
+                        ? getDiscountedPrice(
+                            product.price,
+                            product.discountPercent,
+                          )
+                        : product.price;
 
-                    return (
-                      <li
-                        key={product.id}
-                        className="flex items-center justify-between gap-8"
-                      >
-                        <Link
-                          to={`/product/${product.id}`}
-                          className="flex items-center gap-8 overflow-hidden rounded-lg"
+                      return (
+                        <li
+                          key={product.id}
+                          className="flex items-center justify-between gap-8"
                         >
-                          <div className="flex overflow-hidden rounded-lg">
-                            <img
-                              src={product.image}
-                              alt={product.title}
-                              className="h-[100px] w-[100px] object-cover"
-                            />
-                          </div>
-                          <div className="flex flex-col">
-                            <p className="mb-2 font-poppins text-base text-text-color">
-                              {product.title}
-                            </p>
-                            <div className="flex items-center gap-3">
-                              <span className="font-poppinsLight text-base text-text-color">
-                                {quantity}
-                              </span>
-                              <span className="font-poppinsLight text-xs text-text-color">
-                                X
-                              </span>
-                              <span className="font-poppinsMedium text-xs text-primary">
-                                {product.currency} {price}
-                              </span>
+                          <Link
+                            to={`/product/${product.id}`}
+                            className="flex items-center gap-8 overflow-hidden rounded-lg"
+                          >
+                            <div className="flex overflow-hidden rounded-lg">
+                              <img
+                                src={product.image}
+                                alt={product.title}
+                                className="h-[100px] w-[100px] object-cover"
+                              />
                             </div>
-                          </div>
-                        </Link>
-                        <button
-                          onClick={() =>
-                            dispatch(removeCartProduct(product.id))
-                          }
-                          className="group h-fit"
-                        >
-                          <CircleX
-                            size={24}
-                            className="fill-text-color-400 stroke-white group-hover:fill-primary"
-                          />
-                        </button>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </ScrollArea>
-            )}
-            {cartProducts.length > 0 && (
-              <div className="mt-4 flex gap-24 text-base">
-                <span className="font-poppins text-text-color">Subtotal</span>
-                <span className="font-poppinsSemibold text-primary">
-                  {products[0]?.currency} {totalPrice}
-                </span>
-              </div>
-            )}
+                            <div className="flex flex-col">
+                              <p className="mb-2 font-poppins text-base text-text-color">
+                                {product.title}
+                              </p>
+                              <div className="flex items-center gap-3">
+                                <span className="font-poppinsLight text-base text-text-color">
+                                  {quantity}
+                                </span>
+                                <span className="font-poppinsLight text-xs text-text-color">
+                                  X
+                                </span>
+                                <span className="font-poppinsMedium text-xs text-primary">
+                                  {product.currency} {price}
+                                </span>
+                              </div>
+                            </div>
+                          </Link>
+                          <button
+                            onClick={() =>
+                              dispatch(removeCartProduct(product.id))
+                            }
+                            className="group h-fit"
+                          >
+                            <CircleX
+                              size={24}
+                              className="fill-text-color-400 stroke-white group-hover:fill-primary"
+                            />
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
+              )}
+              {cartProducts.length > 0 && (
+                <div className="mt-4 flex gap-24 text-base">
+                  <span className="font-poppins text-text-color">Subtotal</span>
+                  <span className="font-poppinsSemibold text-primary">
+                    {products[0]?.currency} {totalPrice}
+                  </span>
+                </div>
+              )}
+            </div>
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter className="h-fit gap-2 border-t-[1px] p-6">

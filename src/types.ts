@@ -14,6 +14,41 @@ export interface ProductReview {
   avatar: string;
 }
 
+export interface ProductDetails {
+  general: {
+    salesPackage: string;
+    modelNumber: string;
+    secondaryMaterial: string;
+    configuration: string;
+    upholsteryMaterial: string;
+    upholsteryColor: string;
+  };
+  product: {
+    fillingMaterial: string;
+    finishType: string;
+    adjustableHeadrest: string;
+    maximumLoadCapacity: string;
+    originOfManufacture: string;
+  };
+  dimensions: {
+    width: string;
+    height: string;
+    depth: string;
+    weight: string;
+    seatHeight: string;
+    legHeight: string;
+  };
+  warranty: {
+    warrantySummary: string;
+    warrantyServiceType: string;
+    coveredInWarranty: string;
+    notCoveredInWarranty: string;
+    domesticWarranty: string;
+  };
+}
+
+export type ProductDetailsCategory = keyof ProductDetails;
+
 export interface Product {
   id: string;
   title: string;
@@ -32,6 +67,7 @@ export interface Product {
   sku?: string;
   category?: ProductCategory;
   tags?: Tag[];
+  details: ProductDetails;
 }
 
 export type ProductsSortByTypes = "default" | "price" | "name";

@@ -6,11 +6,14 @@ import { store } from "@/store";
 import { router } from "@/router";
 import "@fontsource-variable/montserrat";
 import "@/index.css";
+import { HelmetProvider } from "react-helmet-async";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <StoreProvider store={store}>
-      <RouterProvider router={router} />
-    </StoreProvider>
-  </React.StrictMode>
+    <HelmetProvider>
+      <StoreProvider store={store}>
+        <RouterProvider router={router} />
+      </StoreProvider>
+    </HelmetProvider>
+  </React.StrictMode>,
 );
