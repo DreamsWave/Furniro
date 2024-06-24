@@ -6,10 +6,11 @@ I obtained the website design from the available [eCommerce Website design](http
 
 ### Features
 
-- [Products shop](https://dreamswave-furniro.netlify.app/shop)
-- [Product page](https://dreamswave-furniro.netlify.app/product/1)
-- [Comparison](https://dreamswave-furniro.netlify.app/comparison)
-- [Cart](https://dreamswave-furniro.netlify.app/cart)
-- [Checkout form](https://dreamswave-furniro.netlify.app/checkout)
-- [Contacts form](https://dreamswave-furniro.netlify.app/contacts)
+- Products shop
+- Product page
+- Comparison
+- Cart
+- Checkout form
+- Contacts form
 - Responsive design(mobile first)
+- localStorage for comparison and cart
