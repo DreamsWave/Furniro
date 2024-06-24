@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { getData } from "country-list";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -34,4 +35,11 @@ export function toSpaceSeparated(str: string) {
     .replace(/([A-Z])/g, " $1")
     .trim()
     .toLowerCase();
+}
+
+export function getCountriesForSelect() {
+  return getData().map((c) => ({
+    value: c.code,
+    label: c.name,
+  }));
 }

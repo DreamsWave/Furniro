@@ -7,6 +7,7 @@ import ProductPage from "@/pages/Product";
 import NotFoundPage from "@/pages/404";
 import CartPage from "./pages/Cart";
 import ComparisonPage from "./pages/Comparison";
+import CheckoutPage from "./pages/Checkout";
 
 export const router = createBrowserRouter([
   {
@@ -40,5 +41,9 @@ export const router = createBrowserRouter([
   {
     path: "/comparison",
     element: <ComparisonPage />,
+  },
+  {
+    path: "/checkout",
+    element: <CheckoutPage />,
   },
 ]);
