@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import { Share2, ArrowRightLeft, Heart, Image } from "lucide-react";
+import { Share2, Heart, Image } from "lucide-react";
 import Button from "@/components/Button";
 import { Product } from "@/types";
 import { useState } from "react";
 import { cn, getDiscountedPrice } from "@/utils";
 import { useDispatch } from "react-redux";
 import { addCartProduct } from "@/features/cart/cartSlice";
+import ComparisonAddButtonSmall from "@/features/comparison/ComparisonAddButtonSmall";
 
 export const PlaceholderImage = () => {
   return (
@@ -94,16 +95,7 @@ const ProductGridElement = ({
             <Share2 size={14} />
             Share
           </button>
-          <button
-            className="inline-flex items-center justify-center gap-1 font-poppinsSemibold text-base hover:text-primary"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-            }}
-          >
-            <ArrowRightLeft size={14} />
-            Compare
-          </button>
+          <ComparisonAddButtonSmall productId={id} />
           <button
             className="inline-flex items-center justify-center gap-1 font-poppinsSemibold text-base hover:text-primary"
             onClick={(e) => {

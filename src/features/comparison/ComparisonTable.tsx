@@ -21,9 +21,7 @@ const ProductCell = ({ product }: { product: Product }) => (
         alt={product.title}
       />
     </div>
-    <Link to={`/product/${product.id}`}>
-      <Header product={product} titleSmall className="pr-4" />
-    </Link>
+    <Header product={product} small className="pr-4" linkableTitle />
     <ComparisonRemoveButton
       productId={product.id}
       className="absolute left-6 top-6 hidden group-hover:flex"
@@ -88,7 +86,10 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({ products }) => {
             <h4 className="mb-4 font-poppinsMedium text-2xl">
               Go to Product page for more Products
             </h4>
-            <Link to={"/shop"} className="underline">
+            <Link
+              to={"/shop"}
+              className="poppins border-b-2 border-text-color-300 text-xl text-text-color-300"
+            >
               View More
             </Link>
           </th>
