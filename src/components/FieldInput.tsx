@@ -8,11 +8,10 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { checkoutScheme } from "./checkoutScheme";
 
 interface FieldInputProps<T extends z.ZodTypeAny> {
   formControl: Control<z.infer<T>>;
-  name: keyof z.infer<typeof checkoutScheme>;
+  name: string;
   label?: string;
   placeholder?: string;
 }

@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/command";
 import { ChevronDown, Check } from "lucide-react";
 import { useState } from "react";
-import { checkoutScheme } from "./checkoutScheme";
+import { checkoutScheme } from "../pages/Checkout/checkoutScheme";
 
 interface FieldInputProps<T extends z.ZodTypeAny> {
   formControl: Control<z.infer<T>>;

@@ -6,8 +6,8 @@ import { Form } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import Hero from "@/components/Hero";
 import { cn, getCountriesForSelect } from "@/utils";
-import FieldInput from "./FieldInput";
-import FieldSelect from "./FieldSelect";
+import FieldInput from "../../components/FieldInput";
+import FieldSelect from "../../components/FieldSelect";
 import { checkoutScheme } from "./checkoutScheme";
 import ProductsTotal from "./ProductsTotal";
 import {
