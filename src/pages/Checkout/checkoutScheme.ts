@@ -12,5 +12,5 @@ export const checkoutScheme = z.object({
   phone: z.string().min(2).max(50),
   email: z.string().email(),
   additional: z.string().optional(),
-  // paymentType: z.enum(["directBankTransfer", "cashOnDelivery"]),
+  paymentType: z.enum(["directBankTransfer", "cashOnDelivery"]),
 });

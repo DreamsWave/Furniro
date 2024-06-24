@@ -172,6 +172,7 @@ const Cart = () => {
             </div>
           </div>
           <Button
+            linkTo="/checkout"
             outlined
             className="rounded-xl border-text-color bg-primary-light font-poppins text-xl capitalize text-text-color hover:border-primary hover:bg-primary hover:text-white"
           >

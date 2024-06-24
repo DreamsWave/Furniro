@@ -3,6 +3,7 @@ import Benefits from "@/components/Benefits";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "./ScrollToTop";
+import { Toaster } from "@/components/ui/toaster";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -28,6 +29,7 @@ const Layout = ({
         {showBenefits && <Benefits />}
       </main>
       <Footer />
+      <Toaster />
     </div>
   );
 };
