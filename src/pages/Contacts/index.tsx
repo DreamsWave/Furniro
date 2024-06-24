@@ -7,7 +7,7 @@ import { z } from "zod";
 import { contactsScheme } from "./contactsScheme";
 import { Form } from "@/components/ui/form";
 import FieldInput from "@/components/FieldInput";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/Button";
 import { toast } from "@/components/ui/use-toast";
 
 const ContactPage = () => {
@@ -30,7 +30,7 @@ const ContactPage = () => {
   return (
     <Layout pageTitle="Contacts" showBenefits>
       <Hero heroName="Contacts" title="Contacts" />
-      <div className="container mb-16">
+      <div className="container-sm mb-16 max-w-[1100px]">
         <div className="mx-auto mb-24 mt-24 max-w-[640px] text-center">
           <h2 className="mb-4 font-poppinsSemibold text-4xl text-text-color">
             Get In Touch With Us
@@ -42,9 +42,11 @@ const ContactPage = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <ul className="flex max-w-[300px] flex-col space-y-10">
-            <li className="flex space-x-6">
-              <MapPin size={28} className="fill-text-color stroke-white" />
+          <ul className="mb-10 grid h-fit grid-cols-1 items-baseline justify-center gap-10 sm:grid-cols-3 sm:items-start md:grid-cols-1">
+            <li className="flex h-fit max-w-[300px] items-center gap-6">
+              <div>
+                <MapPin size={28} className="fill-text-color stroke-white" />
+              </div>
               <div>
                 <h3 className="font-poppinsMedium text-2xl text-text-color">
                   Address
@@ -54,8 +56,10 @@ const ContactPage = () => {
                 </p>
               </div>
             </li>
-            <li className="flex space-x-6">
-              <Phone size={28} className="fill-text-color" />
+            <li className="flex h-fit max-w-[300px] items-center gap-6">
+              <div>
+                <Phone size={28} className="fill-text-color" />
+              </div>
               <div>
                 <h3 className="font-poppinsMedium text-2xl text-text-color">
                   Phone
@@ -66,8 +70,10 @@ const ContactPage = () => {
                 </p>
               </div>
             </li>
-            <li className="flex space-x-6">
-              <Clock4 size={28} className="fill-text-color stroke-white" />
+            <li className="flex h-fit max-w-[300px] items-center gap-6">
+              <div>
+                <Clock4 size={28} className="fill-text-color stroke-white" />
+              </div>
               <div>
                 <h3 className="font-poppinsMedium text-2xl text-text-color">
                   Working Time
@@ -104,10 +110,11 @@ const ContactPage = () => {
                 formControl={form.control}
                 label="Message"
                 placeholder="Hi!, I'd like to ask about ..."
+                multiline
               />
               <Button
                 type="submit"
-                className="rounded-md px-20 py-3 font-poppins text-base"
+                className="rounded-md px-20 py-3 font-poppins text-base capitalize"
               >
                 Submit
               </Button>

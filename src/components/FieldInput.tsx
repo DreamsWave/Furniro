@@ -8,12 +8,14 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 interface FieldInputProps<T extends z.ZodTypeAny> {
   formControl: Control<z.infer<T>>;
   name: string;
   label?: string;
   placeholder?: string;
+  multiline?: boolean;
 }
 
 const FieldInput = <T extends z.ZodTypeAny>({
@@ -21,6 +23,7 @@ const FieldInput = <T extends z.ZodTypeAny>({
   name,
   label,
   placeholder = "",
+  multiline = false,
 }: FieldInputProps<T>) => {
   return (
     <FormField
@@ -35,11 +38,19 @@ const FieldInput = <T extends z.ZodTypeAny>({
             </FormLabel>
           )}
           <FormControl>
-            <Input
-              placeholder={placeholder}
-              {...field}
-              className="h-[75px] rounded-[10px] border-text-color-400 px-8 py-4 text-base text-text-color-100 placeholder:text-text-color-400"
-            />
+            {!multiline ? (
+              <Input
+                placeholder={placeholder}
+                {...field}
+                className="h-[75px] rounded-[10px] border-text-color-400 px-8 py-4 text-base text-text-color-100 placeholder:text-text-color-400"
+              />
+            ) : (
+              <Textarea
+                placeholder={placeholder}
+                {...field}
+                className="min-h-[150px] rounded-[10px] border-text-color-400 px-8 py-6 text-base text-text-color-100 placeholder:text-text-color-400"
+              />
+            )}
           </FormControl>
           <FormMessage />
         </FormItem>

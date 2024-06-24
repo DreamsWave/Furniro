@@ -1,7 +1,11 @@
 import { cn } from "@/utils";
 import { Link } from "react-router-dom";
+import { buttonVariants } from "@/components/ui/button";
+import { VariantProps } from "class-variance-authority";
 
-interface ButtonProps {
+interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
   children?: React.ReactNode;
   outlined?: boolean;
   linkTo?: string;
