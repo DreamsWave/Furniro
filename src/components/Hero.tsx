@@ -1,4 +1,5 @@
 import { ChevronRight } from "lucide-react";
+import LogoImage from "@/assets/images/logo.png";
 
 interface HeroProps {
   heroName: string;
@@ -10,6 +11,11 @@ const Hero = ({ heroName, title }: HeroProps) => {
       <img
         src="/images/heroes/shop-page-image.jpg"
         className="absolute -z-10 h-full w-full object-cover blur-[3px]"
+      />
+      <img
+        src={LogoImage}
+        alt="Furniro logo image"
+        className="w-[30px] object-contain lg:w-[50px]"
       />
       <h1 className="font-poppinsMedium text-5xl">
         {title ? title : heroName}

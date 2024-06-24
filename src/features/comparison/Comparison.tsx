@@ -27,7 +27,7 @@ const Comparison = () => {
   if (products.length === 0)
     return (
       <section className="container flex flex-col items-center py-8">
-        <h3 className="mb-6 text-2xl">Cart is empty</h3>
+        <h3 className="mb-6 text-2xl">Comparison is empty</h3>
         <Button linkTo="/shop">Show Products</Button>
       </section>
     );

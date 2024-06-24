@@ -16,7 +16,7 @@ const Hero = () => {
             velit natus accusamus itaque accusantium quas asperiores a
             necessitatibus iure.
           </p>
-          <Button>Buy now</Button>
+          <Button linkTo="/shop">Buy now</Button>
         </div>
       </div>
     </section>

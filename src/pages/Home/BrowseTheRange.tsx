@@ -14,7 +14,7 @@ const BrowseTheRange = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
         <div className="flex w-full flex-row justify-center gap-5">
-          <Link to="#" className="group flex flex-col items-center">
+          <Link to="/shop" className="group flex flex-col items-center">
             <div className="w-[100px] overflow-hidden rounded-lg md:w-[200px] lg:w-auto">
               <img
                 src={BrowseTheRangeDiningImage}
@@ -26,7 +26,7 @@ const BrowseTheRange = () => {
               Dining
             </h3>
           </Link>
-          <Link to="#" className="group flex flex-col items-center">
+          <Link to="/shop" className="group flex flex-col items-center">
             <div className="w-[100px] overflow-hidden rounded-lg md:w-[200px] lg:w-auto">
               <img
                 src={BrowseTheRangeLivingImage}
@@ -38,7 +38,7 @@ const BrowseTheRange = () => {
               Living
             </h3>
           </Link>
-          <Link to="#" className="group flex flex-col items-center">
+          <Link to="/shop" className="group flex flex-col items-center">
             <div className="w-[100px] overflow-hidden rounded-lg md:w-[200px] lg:w-auto">
               <img
                 src={BrowseTheRangeBedroomImage}

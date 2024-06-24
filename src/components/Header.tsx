@@ -22,11 +22,6 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link to={"/about"} className="hover:text-primary">
-                About
-              </Link>
-            </li>
-            <li>
               <Link to={"/contacts"} className="hover:text-primary">
                 Contacts
               </Link>

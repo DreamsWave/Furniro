@@ -72,7 +72,9 @@ const Inspirations = () => {
             Our designer already made a lot of beautiful prototype of rooms that
             inspire you
           </p>
-          <Button className="hidden w-fit md:flex">Explore More</Button>
+          <Button className="hidden w-fit md:flex" linkTo="/shop">
+            Explore More
+          </Button>
         </div>
 
         <Carousel
@@ -119,7 +121,7 @@ const Inspirations = () => {
                 linkTo={
                   currentInspiration?.id
                     ? `product/${currentInspiration.id}`
-                    : "#"
+                    : "/shop"
                 }
               >
                 <ArrowRight className="size-6 stroke-white group-hover:stroke-primary" />
