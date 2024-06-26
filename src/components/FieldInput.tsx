@@ -10,7 +10,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-interface FieldInputProps<T extends z.ZodTypeAny> {
+interface FieldInputProps<T extends z.ZodTypeAny>
+  extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
   formControl: Control<z.infer<T>>;
   name: string;
   label?: string;
@@ -24,6 +25,7 @@ const FieldInput = <T extends z.ZodTypeAny>({
   label,
   placeholder = "",
   multiline = false,
+  ...props
 }: FieldInputProps<T>) => {
   return (
     <FormField
@@ -43,12 +45,14 @@ const FieldInput = <T extends z.ZodTypeAny>({
                 placeholder={placeholder}
                 {...field}
                 className="h-[75px] rounded-[10px] border-text-color-400 px-8 py-4 text-base text-text-color-100 placeholder:text-text-color-400"
+                {...props}
               />
             ) : (
               <Textarea
                 placeholder={placeholder}
                 {...field}
                 className="min-h-[150px] rounded-[10px] border-text-color-400 px-8 py-6 text-base text-text-color-100 placeholder:text-text-color-400"
+                {...props}
               />
             )}
           </FormControl>

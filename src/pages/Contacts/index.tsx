@@ -114,7 +114,7 @@ const ContactPage = () => {
               />
               <Button
                 type="submit"
-                className="rounded-md px-20 py-3 font-poppins text-base capitalize"
+                className="w-full justify-center rounded-md px-20 py-3 font-poppins text-base capitalize md:w-fit"
               >
                 Submit
               </Button>

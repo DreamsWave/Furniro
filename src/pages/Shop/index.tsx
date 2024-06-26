@@ -82,24 +82,24 @@ const Shop = () => {
           <div className="flex items-center justify-center space-x-6">
             <button className="flex items-center justify-center space-x-3">
               <SlidersHorizontal />
-              <span>Filter</span>
+              <span className="hidden md:flex">Filter</span>
             </button>
-            <button>
+            <button className="hidden md:flex">
               <LayoutGrid />
             </button>
-            <button>
+            <button className="hidden md:flex">
               <Rows3 />
             </button>
-            <div className="h-10 w-[2px] bg-text-color-400"></div>
-            <p>
+            <div className="hidden h-10 w-[2px] bg-text-color-400 md:flex"></div>
+            <p className="hidden md:inline-flex">
               Showing {(currentPage - 1) * productsPerPage + 1}–
               {Math.min(currentPage * productsPerPage, totalProducts)} of{" "}
               {totalProducts} results
             </p>
           </div>
           <div className="flex items-end space-x-8">
-            <div className="flex items-center space-x-4">
-              <span className="text-xl">Show</span>
+            <div className="hidden items-center space-x-4 md:flex">
+              <span className="text-sm md:text-xl">Show</span>
               <Select
                 defaultValue={String(productsPerPage)}
                 placeholder={String(productsPerPage)}
@@ -109,10 +109,11 @@ const Shop = () => {
                   { value: "24", text: "24" },
                 ]}
                 onValueChange={(value) => setProductsPerPage(+value)}
+                className="text-xs md:text-base"
               />
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-xl">Sort by</span>
+              <span className="text-sm md:text-xl">Sort by</span>
               <Select
                 defaultValue={sortBy}
                 placeholder={sortBy}
@@ -124,6 +125,7 @@ const Shop = () => {
                 onValueChange={(value) =>
                   setSortBy(value as ProductsSortByTypes)
                 }
+                className="text-xs md:text-base"
               />
             </div>
           </div>

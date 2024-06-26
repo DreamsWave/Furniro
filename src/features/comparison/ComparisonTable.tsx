@@ -79,7 +79,7 @@ const renderTableCategory = (
 
 const ComparisonTable: React.FC<ComparisonTableProps> = ({ products }) => {
   return (
-    <table className="mb-28 mt-8 table-auto overflow-x-auto">
+    <table className="mb-28 mt-8 table-auto">
       <thead>
         <tr>
           <th className="flex w-[350px] flex-col content-start items-start justify-start p-4 text-start">

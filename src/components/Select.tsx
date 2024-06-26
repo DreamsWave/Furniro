@@ -37,15 +37,22 @@ interface SelectProps {
   defaultValue?: string;
   options: Array<{ value: string; text: string }>;
   placeholder?: string;
+  className?: string;
 }
 const SelectComponent = ({
   onValueChange,
   defaultValue,
   options,
   placeholder,
+  className,
 }: SelectProps) => (
   <Select.Root onValueChange={onValueChange} defaultValue={defaultValue}>
-    <Select.Trigger className="inline-flex items-center justify-center bg-white px-5 py-3 font-poppins text-xl text-text-color-400 outline-none">
+    <Select.Trigger
+      className={cn(
+        "inline-flex items-center justify-center bg-white px-5 py-3 font-poppins text-xl text-text-color-400 outline-none",
+        className,
+      )}
+    >
       <Select.Value placeholder={placeholder} />
     </Select.Trigger>
     <Select.Portal>
@@ -54,7 +61,7 @@ const SelectComponent = ({
           <ChevronUpIcon />
         </Select.ScrollUpButton>
         <Select.Viewport className="p-[5px]">
-          <Select.Group className="flex flex-col space-y-3 py-3 text-xl">
+          <Select.Group className="flex flex-col space-y-3 py-3 text-sm md:text-xl">
             {options.map((option) => (
               <SelectItem key={option.value} value={option.value}>
                 {option.text}

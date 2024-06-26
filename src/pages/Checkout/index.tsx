@@ -3,7 +3,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Layout from "@/components/Layout";
 import { Form } from "@/components/ui/form";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/Button";
 import Hero from "@/components/Hero";
 import { cn, getCountriesForSelect } from "@/utils";
 import FieldInput from "../../components/FieldInput";
@@ -64,7 +64,7 @@ const CheckoutPage = () => {
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-4">
-                <div className="space-y-8 p-16">
+                <div className="space-y-8 pt-16 md:p-16">
                   <h2 className="font-poppinsSemibold text-4xl">
                     Billing details
                   </h2>
@@ -120,11 +120,13 @@ const CheckoutPage = () => {
                     formControl={form.control}
                     label="Phone"
                     name="phone"
+                    autoComplete="true"
                   />
                   <FieldInput
                     formControl={form.control}
                     label="Email address"
                     name="email"
+                    autoComplete="true"
                   />
                   <FieldInput
                     formControl={form.control}
@@ -132,7 +134,7 @@ const CheckoutPage = () => {
                     placeholder="Additional information"
                   />
                 </div>
-                <div className="space-y-8 p-16">
+                <div className="space-y-8 md:p-16">
                   <ProductsTotal />
                   <div>
                     <Accordion
@@ -185,7 +187,12 @@ const CheckoutPage = () => {
                       </AccordionItem>
                     </Accordion>
                   </div>
-                  <Button type="submit">Place order</Button>
+                  <Button
+                    type="submit"
+                    className="w-full justify-center rounded-md px-20 py-3 font-poppins text-base capitalize md:w-fit"
+                  >
+                    Place order
+                  </Button>
                 </div>
               </div>
             </form>

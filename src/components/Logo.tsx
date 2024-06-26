@@ -1,15 +1,25 @@
 import { Link } from "react-router-dom";
 import LogoImage from "@/assets/images/logo.png";
+import { cn } from "@/utils";
 
-const Logo = () => {
+interface LogoProps {
+  shrinkable?: boolean;
+}
+
+const Logo = ({ shrinkable = false }: LogoProps) => {
   return (
     <Link to="/" className="flex gap-1">
       <img
         src={LogoImage}
         alt="Furniro logo image"
-        className="object-contain w-[30px] lg:w-[50px]"
+        className="w-[30px] object-contain lg:w-[50px]"
       />
-      <h1 className="font-montserrat text-text-color font-bold text-2xl lg:text-[32px]">
+      <h1
+        className={cn(
+          "font-montserrat text-2xl font-bold text-text-color lg:text-[32px]",
+          shrinkable && "hidden sm:flex",
+        )}
+      >
         Furniro
       </h1>
     </Link>

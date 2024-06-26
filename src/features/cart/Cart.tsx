@@ -66,7 +66,7 @@ const Cart = () => {
 
   return (
     <section className="py-20">
-      <div className="container grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-3 gap-8 lg:container">
         {products.length === 0 && <h3>Cart is empty</h3>}
         <div className="col-span-3 lg:col-span-2">
           <Table>
@@ -109,7 +109,7 @@ const Cart = () => {
                           <img
                             src={product.image}
                             alt={product.title}
-                            className="h-[100px] w-full object-cover"
+                            className="h-[100px] w-full min-w-[100px] object-cover"
                           />
                         </Link>
                       </TableCell>
@@ -155,7 +155,7 @@ const Cart = () => {
             </TableBody>
           </Table>
         </div>
-        <div className="col-span-3 flex flex-col items-center bg-primary-light px-8 py-4 pb-20 lg:col-span-1">
+        <div className="col-span-3 flex h-fit flex-col items-center bg-primary-light px-8 py-4 pb-20 lg:col-span-1">
           <h3 className="mb-14 font-poppinsSemibold text-3xl">Cart Totals</h3>
           <div className="mb-14 flex w-full max-w-[250px] flex-col gap-10">
             <div className="flex justify-between">

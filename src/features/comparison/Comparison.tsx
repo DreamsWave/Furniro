@@ -33,7 +33,7 @@ const Comparison = () => {
     );
   return (
     <section>
-      <div className="container">
+      <div className="overflow-x-auto">
         <ComparisonTable products={products} />
       </div>
     </section>

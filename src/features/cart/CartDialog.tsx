@@ -56,7 +56,15 @@ const CardDialog = () => {
 
   return (
     <AlertDialog>
-      <AlertDialogTrigger className="relative">
+      <Link to="/cart" className="relative inline-flex md:hidden">
+        <ShoppingCart size={28} />
+        {cartProducts.length > 0 && (
+          <span className="absolute bottom-0 right-0 flex h-4 w-4 translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full bg-white font-poppinsBold text-sm text-primary ring-2 ring-primary">
+            {cartProducts.length}
+          </span>
+        )}
+      </Link>
+      <AlertDialogTrigger className="relative hidden md:flex">
         <ShoppingCart size={28} />
         {cartProducts.length > 0 && (
           <span className="absolute bottom-0 right-0 flex h-4 w-4 translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full bg-white font-poppinsBold text-sm text-primary ring-2 ring-primary">
